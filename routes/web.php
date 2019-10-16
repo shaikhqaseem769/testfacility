@@ -102,6 +102,10 @@ Route::namespace('Admin')->group(function () {
         return view('admin.booking.book_test_list', compact('categories', 'page_title'));
     })->name('book-test-rejected-list');
 
+
+    Route::get('organisation-master', function() {
+        return view('admin.master_data.organisation_master');
+    })->name('organisation-master');
 });
 
 
