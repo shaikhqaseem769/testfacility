@@ -1,0 +1,91 @@
+define({ "api": [
+  {
+    "type": "post",
+    "url": "/api/v1/add-allergen",
+    "title": "save allergen",
+    "name": "saveAllergens",
+    "group": "V1APP",
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "content-type",
+            "description": "<p>application/json</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>auth token</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "allergen_name",
+            "description": "<p>allergen name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "restaurant_id",
+            "description": "<p>restaurant id</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "description",
+            "description": "<p>description</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "integer",
+            "optional": true,
+            "field": "allergen_id",
+            "description": "<p>allergen id (if you want to update alergen)</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n    \"allergen_name\" : \"Alu\",\n    \"restaurant_id\" : \"454\",\n    \"description\" : \"description\",\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n\n{\n    \"success\": true,\n    \"response_code\": 200,\n    \"message\": \"Allergen has been added successfully!\",\n    \"allergen\" => {},\n    \"errors\": {}\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response",
+          "content": "HTTP/1.1 200 Unprocessable Entity\n   {\n       \"success\": false,\n       \"message\": \"Invalid data!\",\n       \"data\": {},\n       \"errors\": {\n           \"restaurant_id\": [\n               \"The restaurant id field is required.\"\n           ]\n       }\n   }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "app/Http/Controllers/API/Admin/AllergensController.php",
+    "groupTitle": "V1APP"
+  }
+] });
