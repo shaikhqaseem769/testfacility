@@ -46,27 +46,27 @@
                     </div>
                 </div>
             </div>
-            <form action="" id="addLabs" method="POST" enctype="multipart/form-data">
+            <form action="" id="add_test" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="row">
                     <div class="col-md-6 col-lg-6" >
                         <div class="form-group row">
-                            <label for="product_material" class="col-md-4"><span class="text-danger">*</span>Organisation:</label>
+                            <label for="organisation_name" class="col-md-4"><span class="text-danger">*</span>Organisation:</label>
                             <div class="col-md-8">
-                                <select class="form-control" name="organisation" id="organisation">
+                                <select class="form-control" name="organisation_name" id="organisation_name">
                                     <option>Please Select Organisation</option>
                                 </select>
-                                <span class="help-block text-help text-danger" id="product_material-block"></span>
+                                <span class="help-block text-help text-danger" id="organisation_name-block"></span>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="product_material" class="col-md-4"><span class="text-danger">*</span>Establishment having Test Facility:</label>
+                            <label for="establishment" class="col-md-4"><span class="text-danger">*</span>Establishment having Test Facility:</label>
                             <div class="col-md-8">
-                                <select class="form-control" name="organisation" id="organisation">
+                                <select class="form-control" name="establishment" id="establishment">
                                     <option>Please Select Establishment having Test Facility</option>
                                 </select>
-                                <span class="help-block text-help text-danger" id="product_material-block"></span>
+                                <span class="help-block text-help text-danger" id="establishment-block"></span>
                             </div>
                         </div>
 
@@ -125,24 +125,24 @@
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th width="15%">Test/Calibration Facility (apparatus name)</th>
-                                        <th width="12%">Test Eqpt manufacturer</th>
-                                        <th width="14%">Manufacturing Year of Eqpt</th>
-                                        <th width="14%">Test Chamber Size (if applicable)</th>
-                                        <th width="14%">Range of Testing Eqpt</th>
-                                        <th width="14%">Eqpt/Product/ Material</th>
-                                        <th width="14%">Parameter/ Name of Test</th>
-                                        <th width="14%">Stds/ Specifications (if any)</th>
-                                        <th width="14%">Max Dimension of Eqpt to be tested</th>
-                                        <th width="14%">Max Weight of Eqpt to be tested</th>
-                                        <th width="14%">Duration of Test</th>
-                                        <th width="14%">Testing Charges/Sample (excluding GST)</th>
-                                        <th width="14%">Price On</th>
-                                        <th width="14%">NABL Status of Lab</th>
-                                        <th width="14%">Advance Notice</th>
-                                        <th width="14%">Constraints</th>
-                                        <th width="14%">Remarks</th>
-                                        <th  width="15%" class="text-nowrap">Actions</th>
+                                        <th width="">Test/Calibration Facility (apparatus name)</th>
+                                        <th width="">Test Eqpt manufacturer</th>
+                                        <th width="">Manufacturing Year of Eqpt</th>
+                                        <th width="">Test Chamber Size (if applicable)</th>
+                                        <th width="">Range of Testing Eqpt</th>
+                                        <th width="">Eqpt/Product/ Material</th>
+                                        <th width="">Parameter/ Name of Test</th>
+                                        <th width="">Stds/ Specifications (if any)</th>
+                                        <th width="">Max Dimension of Eqpt to be tested</th>
+                                        <th width="">Max Weight of Eqpt to be tested</th>
+                                        <th width="">Duration of Test</th>
+                                        <th width="">Testing Charges/Sample (excluding GST)</th>
+                                        <th width="">Price On</th>
+                                        <th width="">NABL Status of Lab</th>
+                                        <th width="">Advance Notice</th>
+                                        <th width="">Constraints</th>
+                                        <th width="">Remarks</th>
+                                        <th width="" class="text-nowrap">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -220,46 +220,46 @@
                 <div class="col-md-6 col-lg-6">
                     <div class="example-wrap mb-35">
                         <div class="form-group row">
-                            <label for="product_material" class="col-md-4"><span class="text-danger">*</span>Test/Calibration Facility (apparatus name):</label>
+                            <label for="calibration_facility" class="col-md-4"><span class="text-danger">*</span>Test/Calibration Facility (apparatus name):</label>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" placeholder="Test/Calibration Facility (apparatus name)" id="product_material" name="product_material">
-                                <span class="help-block text-help text-danger" id="product_material-block"></span>
+                                <input type="text" class="form-control" placeholder="Test/Calibration Facility (apparatus name)" id="calibration_facility" name="calibration_facility">
+                                <span class="help-block text-help text-danger" id="calibration_facility-block"></span>
                             </div>
                         </div>
                         
                         <div class="form-group row">
-                            <label for="product_material" class="col-md-4"><span class="text-danger">*</span>Test Eqpt manufacturer:</label>
+                            <label for="test_eqpt_manufacturer" class="col-md-4"><span class="text-danger">*</span>Test Eqpt Manufacturer:</label>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" placeholder="Test Eqpt manufacturer" id="product_material" name="product_material">
-                                <span class="help-block text-help text-danger" id="product_material-block"></span>
+                                <input type="text" class="form-control" placeholder="Test Eqpt manufacturer" id="test_eqpt_manufacturer" name="test_eqpt_manufacturer">
+                                <span class="help-block text-help text-danger" id="test_eqpt_manufacturer-block"></span>
                             </div>
                         </div>  
                         
                         <div class="form-group row">
-                            <label for="product_material" class="col-md-4"><span class="text-danger">*</span>Manufacturing Year of Eqpt:</label>
+                            <label for="manufacturing_year_of_eqpt" class="col-md-4"><span class="text-danger">*</span>Manufacturing Year of Eqpt:</label>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" placeholder="Manufacturing Year of Eqpt" id="product_material" name="product_material">
-                                <span class="help-block text-help text-danger" id="product_material-block"></span>
+                                <input type="text" class="form-control" placeholder="Manufacturing Year of Eqpt" id="manufacturing_year_of_eqpt" name="manufacturing_year_of_eqpt">
+                                <span class="help-block text-help text-danger" id="manufacturing_year_of_eqpt-block"></span>
                             </div>
                         </div>   
 
     
 
                         <div class="form-group row">
-                            <label for="location" class="col-md-4"><span class="text-danger">*</span>Test Chamber Size (if applicable):</label>
+                            <label for="chamber_size" class="col-md-4"><span class="text-danger">*</span>Test Chamber Size (if applicable):</label>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" placeholder="Test Chamber Size (if applicable)" id="location" name="location">
+                                <input type="text" class="form-control" placeholder="Test Chamber Size (if applicable)" id="chamber_size" name="chamber_size">
                             
-                                <span class="help-block text-help text-danger" id="location-block"></span>
+                                <span class="help-block text-help text-danger" id="chamber_size-block"></span>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="location" class="col-md-4"><span class="text-danger">*</span>Range of Testing Eqpt:</label>
+                            <label for="range_of_test_eqpt" class="col-md-4"><span class="text-danger">*</span>Range of Testing Eqpt:</label>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" placeholder="Range of Testing Eqpt" id="location" name="location">
+                                <input type="text" class="form-control" placeholder="Range of Testing Eqpt" id="range_of_test_eqpt" name="range_of_test_eqpt">
                             
-                                <span class="help-block text-help text-danger" id="location-block"></span>
+                                <span class="help-block text-help text-danger" id="range_of_test_eqpt-block"></span>
                             </div>
                         </div>
 
@@ -272,10 +272,10 @@
                         </div>
                                 
                         <div class="form-group row">
-                            <label for="parameter" class="col-md-4"><span class="text-danger">*</span>Parameter/ Name of Test:</label>
+                            <label for="test_name" class="col-md-4"><span class="text-danger">*</span>Parameter/ Name of Test:</label>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" placeholder="Parameter/ Name of Test" id="parameter" name="parameter">
-                                <span class="help-block text-help text-danger" id="parameter-block"></span>
+                                <input type="text" class="form-control" placeholder="Parameter/ Name of Test" id="test_name" name="test_name">
+                                <span class="help-block text-help text-danger" id="test_name-block"></span>
                             </div>
                         </div>
 
@@ -327,16 +327,37 @@
                             </div>
                         </div>
                         <div class="form-group row">
+                            <label for="charge_on" class="col-md-4"><span class="text-danger">*</span>Price On :</label>
+                            <div class="col-md-8">
+                                <select class="form-control" name="charge_on" id="charge_on">
+                                    <option>Please Select</option>
+                                    <option>Per Unit</option>
+                                    <option>Per Point</option>
+                                </select>
+                                <span class="help-block text-help text-danger" id="charge_on-block"></span>
+                            </div>
+                        </div>
+
+                        <!-- <div class="form-group row">
+                            <label for="test_charge" class="col-md-4"><span class="text-danger">*</span>Testing Charges/Sample (excluding GST):</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" placeholder="Testing Charges/Sample (excluding GST)" id="test_charge" name="test_charge">
+                                <span class="help-block text-help text-danger" id="test_charge-block"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="test_charge" class="col-md-4"><span class="text-danger">*</span>Price On :</label>
                             <div class="col-md-8">
-                                <select class="form-control">
+                                <select class="form-control" name="charge_on">
                                     <option>Please Select</option>
                                     <option>Per Unit</option>
                                     <option>Per Point</option>
                                 </select>
                                 <span class="help-block text-help text-danger" id="test_charge-block"></span>
                             </div>
-                        </div>
+                        </div> -->
+
                         <div class="form-group row">
                             <label for="nabl_status" class="col-md-4"><span class="text-danger">*</span>NABL Status of Lab:</label>
                             <div class="col-md-8">
