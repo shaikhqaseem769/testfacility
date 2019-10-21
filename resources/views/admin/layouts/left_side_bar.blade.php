@@ -3,12 +3,17 @@
         <div>
              <div>
                 <ul class="site-menu" data-plugin="menu">
+                    
+
+                    @if(Auth::user()->user_type === 'admin')
+
                     <li class="site-menu-item {{ Route::is('dashboard') ? 'active' : '' }}">
                         <a href="{{ route('dashboard') }}">
                             <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
                             <span class="site-menu-title">Dashboard</span>
                         </a>
                     </li>
+
                     <li class="site-menu-item has-sub {{ (
                         
                         Route::is('add-category') ||
@@ -72,11 +77,102 @@
                         </ul>
                     </li>
 
-                    
-                    <li class="site-menu-item {{ Route::is('search') ? 'active' : '' }}">
-                        <a href="{{ route('search') }}">
+                    <li class="site-menu-item has-sub {{ (
+                        
+                       
+                        Route::is('book-test-list') ||
+                        Route::is('book-test-accepted-list') ||
+                        Route::is('book-test-rejected-list')
+                        ) ? ' open active' : '' }}">
+                        <a href="javascript:void(0)">
+                            <i class="site-menu-icon wb-layout" aria-hidden="true"></i>
+                            <span class="site-menu-title">Booking Management</span>
+                            <span class="site-menu-arrow"></span>
+                        </a>
+                        <ul class="site-menu-sub">
+                            <li class="site-menu-item {{ Route::is('book-test-list') ||  Route::is('book-test-list') ? 'active' : '' }}">
+                                <a href="{{ route('book-test-list') }}">
+                                    <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
+                                    <span class="site-menu-title">Booking Test Request</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item {{ ((Route::is('book-test-accepted-list') || Route::is('book-test-accepted-list') ) ? 'active' : '') }}">
+                                <a href="{{ route('book-test-accepted-list') }}">
+                                    <span class="site-menu-title">Test  Accepted</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item {{ ((Route::is('book-test-rejected-list') || Route::is('book-test-rejected-list') ) ? 'active' : '') }}">
+                                <a href="{{ route('book-test-rejected-list') }}">
+                                    <span class="site-menu-title">Test  Rejected</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <li class="site-menu-item {{ Route::is('reports') ? 'active' : '' }}">
+                        <a href="{{ route('reports') }}">
                             <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
-                            <span class="site-menu-title">Search Test</span>
+                            <span class="site-menu-title">Reports</span>
+                        </a>
+                    </li>
+
+                    
+
+                    @endif
+
+                    
+                    <!-- Chief Nodal Officer -->
+                    @if(Auth::user()->user_type === 'cno')
+                    
+                    <li class="site-menu-item has-sub {{ (
+                        
+                       
+                        Route::is('book-test-list') ||
+                        Route::is('book-test-accepted-list') ||
+                        Route::is('book-test-rejected-list')
+                        ) ? ' open active' : '' }}">
+                        <a href="javascript:void(0)">
+                            <i class="site-menu-icon wb-layout" aria-hidden="true"></i>
+                            <span class="site-menu-title">Booking Management</span>
+                            <span class="site-menu-arrow"></span>
+                        </a>
+                        <ul class="site-menu-sub">
+                            <li class="site-menu-item {{ Route::is('book-test-list') ||  Route::is('book-test-list') ? 'active' : '' }}">
+                                <a href="{{ route('book-test-list') }}">
+                                    <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
+                                    <span class="site-menu-title">Booking Test Request</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item {{ ((Route::is('book-test-accepted-list') || Route::is('book-test-accepted-list') ) ? 'active' : '') }}">
+                                <a href="{{ route('book-test-accepted-list') }}">
+                                    <span class="site-menu-title">Test  Accepted</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item {{ ((Route::is('book-test-rejected-list') || Route::is('book-test-rejected-list') ) ? 'active' : '') }}">
+                                <a href="{{ route('book-test-rejected-list') }}">
+                                    <span class="site-menu-title">Test  Rejected</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <li class="site-menu-item {{ Route::is('reports') ? 'active' : '' }}">
+                        <a href="{{ route('reports') }}">
+                            <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
+                            <span class="site-menu-title">Reports</span>
+                        </a>
+                    </li>
+                    @endif
+
+                    <!-- Chief Officer -->
+                    @if(Auth::user()->user_type === 'no')
+
+                    <li class="site-menu-item {{ Route::is('reports') ? 'active' : '' }}">
+                        <a href="{{ route('reports') }}">
+                            <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
+                            <span class="site-menu-title">Reports</span>
                         </a>
                     </li>
 
@@ -113,7 +209,75 @@
                         </ul>
                     </li>
 
+                    @endif
+
+
+                    <!-- User -->
+                    @if(Auth::user()->user_type === 'user')
+
+                    <li class="site-menu-item has-sub {{ (
+                        
+                       
+                        Route::is('book-test-list') ||
+                        Route::is('book-test-accepted-list') ||
+                        Route::is('book-test-rejected-list')
+                        ) ? ' open active' : '' }}">
+                        <a href="javascript:void(0)">
+                            <i class="site-menu-icon wb-layout" aria-hidden="true"></i>
+                            <span class="site-menu-title">My Test</span>
+                            <span class="site-menu-arrow"></span>
+                        </a>
+                        <ul class="site-menu-sub">
+                            <li class="site-menu-item {{ ((Route::is('book-test-accepted-list') || Route::is('book-test-accepted-list') ) ? 'active' : '') }}">
+                                <a href="{{ route('book-test-accepted-list') }}">
+                                    <span class="site-menu-title">Test  Accepted</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item {{ ((Route::is('book-test-rejected-list') || Route::is('book-test-rejected-list') ) ? 'active' : '') }}">
+                                <a href="{{ route('book-test-rejected-list') }}">
+                                    <span class="site-menu-title">Test  Rejected</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <li class="site-menu-item {{ Route::is('search') ? 'active' : '' }}">
+                        <a href="{{ route('search') }}">
+                            <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
+                            <span class="site-menu-title">Search Test</span>
+                        </a>
+                    </li>
+
+                    @endif
+
                 </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 {{-- 
                     @if(Auth::user()->user_type=='admin')

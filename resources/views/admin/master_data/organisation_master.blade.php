@@ -49,26 +49,27 @@
             <div class="col-md-6 col-lg-6">
                 <div class="example-wrap mb-35">
                     <div class="form-group row">
-                        <label for="category_name" class="col-md-4"><span class="text-danger">*</span>Organisation Name:</label>
+                        <label for="organisation_name" class="col-md-4"><span class="text-danger">*</span>Organisation Name:</label>
                         <div class="col-md-8">
-                            <input type="text" class="form-control" placeholder="Organisation Name" id="category_name" name="category_name" value="{{ isset($category->category_name) ? $category->category_name : old('category_name')}}">
-                            <span class="help-block text-help text-danger" id="category_name-block"></span>
+                            <input type="text" class="form-control" placeholder="Organisation Name" id="organisation_name" name="organisation_name" value="{{ isset($category->organisation_name) ? $category->organisation_name : old('organisation_name')}}">
+                            <span class="help-block text-help text-danger" id="organisation_name-block"></span>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="description" class="col-md-4">Email id of Establishment:</label>
+                        <label for="establishment_email_id" class="col-md-4">Email id of Establishment:</label>
                         <div class="col-md-8">
-                            <input type="email" class="form-control" placeholder="Email id of Establishment" id="position" name="position" value="{{ isset($category->position) ? $category->position : old('position')}}">
-                            <span class="help-block text-help text-danger" id="description-block"></span>
+                            <input type="email" class="form-control" placeholder="Email id of Establishment" id="establishment_email_id" name="establishment_email_id" value="{{ isset($category->position) ? $category->position : old('establishment_email_id')}}">
+                            <span class="help-block text-help text-danger" id="establishment_email_id-block"></span>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="position" class="col-md-4"><span class="text-danger">*</span>Email id of Central Nodal Officer:</label>
+                        <label for="cno_email_id" class="col-md-4">Email id of Central Nodal Officer:</label>
                         <div class="col-md-8">
-                            <input type="email" class="form-control" placeholder="Email id of Central Nodal Officer" id="position" name="position" value="{{ isset($category->position) ? $category->position : old('position')}}">
-                            <span class="help-block text-help text-danger" id="position-block"></span>
+                            <input type="email" class="form-control" placeholder="Email id of Central Nodal Officer" id="cno_email_id" name="cno_email_id" value="{{ isset($category->position) ? $category->position : old('cno_email_id')}}">
+                            <span class="help-block text-help text-danger" id="cno_email_id-block"></span>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>

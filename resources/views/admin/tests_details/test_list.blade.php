@@ -67,30 +67,74 @@
                         </thead>
                         <tbody>
 
-                        @foreach($categories as $category)
                         <tr>
-                            <td class="record_id" style="display: none;">{{ $category->id }}</td>
-                            <td class="record_name">{{ $category->category_name }}</td>
-                            <td>{{ date('d M Y',strtotime($category->created_at)) }}</td>
-                            <td class="text-center Recordstatus" status="{{ ($category->status==0) ? 1 : 0  }}">
-                                {{ ($category->status==0) ? 'Inactive' : 'Active' }}
-                            </td>
+                            <td>Goa Shipyard Ltd</td>
+                            <td>Goa Shipyard Ltd</td>
+                            <td> Instrumentation Workshop</td>
+                            <td> Goa</td>
+                            <td>Delta Marketing</td>
+                            <td>0- 2000Amps</td>
+                            <td> Calibration & Testing ACBs, MCCBs for LT tripping </td>
+                            <td>  ACBs, MCCBs for LT tripping </td>
+                            
+                            <td> Active </td>
                             <td class="text-nowrap">
-                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning edit_record" data-toggle="tooltip"
-                                        data-original-title="{{--Edit--}}">
-                                    <i class="icon wb-wrench" aria-hidden="true"></i>
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning"  data-toggle="modal" data-target="#myModaladd">
+                                <i class="icon wb-wrench" aria-hidden="true"></i>
                                 </button>
-                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning delete_record" data-toggle="tooltip"
-                                        data-original-title="{{--Delete--}}">
-                                    <i class="icon wb-trash" aria-hidden="true"></i>
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="modal" data-target="#id">
+                                <i class="icon wb-trash" aria-hidden="true"></i>
                                 </button>
-                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning change_record_status" data-toggle="tooltip"
-                                        data-original-title="{{--{{ ($cuisine->status==0) ? 'Activate' : 'De-Activate' }}--}}">
-                                    <i class="icon wb-{{ ($category->status==0) ? 'close' : 'check' }}" aria-hidden="true"></i>
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="tooltip" data-original-title="">
+                                    <i class="icon wb-close" aria-hidden="true"></i>
                                 </button>
                             </td>
                         </tr>
-                        @endforeach
+
+                        <tr>
+                            <th width="">Midhani</th>
+                            <th width="">Midhani</th>
+                            <th width="">Midhani</th>
+                            <th width="">Heydrabad</th>
+                            <th width="">Test Eqpt manufacturer</th>
+                            <th width="">Range of Testing Eqpt</th>
+                            <th width="">Metallic Materials</th>
+                            <th width="">TENSILE TESTING </th>
+                            <th width="">Active</th>
+                            <td class="text-nowrap">
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning"  data-toggle="modal" data-target="#myModaladd">
+                                <i class="icon wb-wrench" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="modal" data-target="#id">
+                                <i class="icon wb-trash" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="tooltip" data-original-title="">
+                                    <i class="icon wb-close" aria-hidden="true"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="">Organisation Name</th>
+                            <th width="">Establishment having Test Facility</th>
+                            <th width="">Lab</th>
+                            <th width="">Location</th>
+                            <th width="">Test Eqpt manufacturer</th>
+                            <th width="">Range of Testing Eqpt</th>
+                            <th width="">Eqpt/Product/ Material</th>
+                            <th width="">Parameter/ Name of Test</th>
+                            <th width="">Active</th>
+                            <td class="text-nowrap">
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning"  data-toggle="modal" data-target="#myModaladd">
+                                <i class="icon wb-wrench" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="modal" data-target="#id">
+                                <i class="icon wb-trash" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="tooltip" data-original-title="">
+                                    <i class="icon wb-close" aria-hidden="true"></i>
+                                </button>
+                            </td>
+                        </tr>
                         </tbody>
                     </table>
                     {{-- $categories->links() --}}

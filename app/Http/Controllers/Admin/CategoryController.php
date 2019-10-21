@@ -9,6 +9,7 @@ use Auth;
 class CategoryController extends Controller
 {
     public function categoryList(){
+        // dd(Auth::user()->user_type);
     	$categories = Category::paginate();
     	return view('admin.categories.category_list', compact('categories'));
     }

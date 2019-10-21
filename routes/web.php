@@ -11,12 +11,12 @@
 |
 */
 
+
 Auth::routes();
 
 Route::get('/test', function () {
     return view('admin.menu_categories.add_menu_category');
 });
-
 
 
 /*Route::get('/', function () {
@@ -37,9 +37,9 @@ Route::get('/test', function () {
 */
 
 Route::get('/', function () {
-	
-    return (!Auth::check() ? redirect('/login') : redirect('dashboard'));
+	return (!Auth::check() ? redirect('/login') : redirect('dashboard'));
 });
+
 Route::namespace('Admin')->group(function () {
 
 	// Category Add, Update, delete and change status
@@ -74,13 +74,6 @@ Route::namespace('Admin')->group(function () {
 
 
 
-
-
-
-
-
-
-
     Route::get('dashboard','DashboardController@getDashboard')->name('dashboard');
 
     Route::get('book-test-list', function() {
@@ -110,7 +103,6 @@ Route::namespace('Admin')->group(function () {
 
 
 
-/*Route::get('/home', 'HomeController@index')->name('home');*/
 Route::get('/settings', 'HomeController@settings')->name('settings');
 
 Route::post('save_settings','HomeController@saveSettings');
@@ -121,7 +113,7 @@ Route::group(['middleware'=>'auth','namespace'=>'Admin'],function(){
 
 /*Frontent User*/
 
-// Route::get('search','TestsController@searchResult')->name('search');
+
 
 
 Route::get('/search', function () {
@@ -132,6 +124,13 @@ Route::get('/search', function () {
 Route::get('book-test', function () {
     return view('frontent.book_test');
 })->name('book-test');
+
+
+Route::get('reports', function () {
+     $categories = [];
+    return view('admin.reports.report_list', compact('categories'));
+})->name('reports');
+
 
 });
 

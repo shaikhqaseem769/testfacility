@@ -50,9 +50,9 @@
                                 <div class="col">
                                     <input type="text" class="form-control" placeholder="Eqpt/Product/ Material">
                                 </div>
-                                <div class="col">
+                                <!-- <div class="col">
                                     <input type="text" class="form-control" placeholder="Location">
-                                </div>
+                                </div> -->
                                 <div class="col">
                                     <input type="text" class="form-control" placeholder="Discipline">
                                 </div>
@@ -125,6 +125,43 @@
                                     <i class="icon wb-order" aria-hidden="true"></i>
                                 </a>
                                 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Goa Shipyard Ltd</td>
+                            <td>Goa Shipyard Ltd</td>
+                            <td> Instrumentation Workshop</td>
+                            <td>Delta Marketing</td>
+                            <td> Goa</td>
+                            <td>PT 100/1000</td>
+                            <td>  Rs. 654/ </td>
+                            <td class="text-nowrap">
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning edit_record" data-toggle="modal" data-target="#exampleModalCenter">
+                                  <i class="icon wb-eye" aria-hidden="true"></i>
+                                </button>
+                                <a class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="tooltip"
+                                        data-original-title="Book Order" href="{{ route('book-test')}}">
+                                    <i class="icon wb-order" aria-hidden="true"></i>
+                                </a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th width="">Midhani</th>
+                            <th width="">Midhani</th>
+                            <th width="">Midhani</th>
+                            <th width="">Test Eqpt manufacturer</th>
+                            <th width="">Heydrabad</th>
+                            <th width="">Metallic Materials</th>
+                            <th width="">Rs. 5292/-</th>
+                            <td class="text-nowrap">
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning edit_record" data-toggle="modal" data-target="#exampleModalCenter">
+                                  <i class="icon wb-eye" aria-hidden="true"></i>
+                                </button>
+                                <a class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="tooltip"
+                                        data-original-title="Book Order" href="{{ route('book-test')}}">
+                                    <i class="icon wb-order" aria-hidden="true"></i>
+                                </a>
                             </td>
                         </tr>
                         

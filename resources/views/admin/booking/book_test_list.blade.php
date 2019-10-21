@@ -67,6 +67,53 @@
                         </thead>
                         <tbody>
 
+                        <tr>
+                            <td>Goa Shipyard Ltd</td>
+                            <td>Goa Shipyard Ltd</td>
+                            <td> Instrumentation Workshop</td>
+                            <td> Goa</td>
+                            <td>Delta Marketing</td>
+                            <td>0- 2000Amps</td>
+                            <td> Calibration & Testing ACBs, MCCBs for LT tripping </td>
+                            <td>  ACBs, MCCBs for LT tripping </td>
+                            
+                            <td> Active </td>
+                            <td class="text-nowrap">
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning"  data-toggle="modal" data-target="#myModaladd">
+                                <i class="icon wb-wrench" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="modal" data-target="#id">
+                                <i class="icon wb-trash" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="tooltip" data-original-title="">
+                                    <i class="icon wb-close" aria-hidden="true"></i>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th width="">Midhani</th>
+                            <th width="">Midhani</th>
+                            <th width="">Midhani</th>
+                            <th width="">Heydrabad</th>
+                            <th width="">Test Eqpt manufacturer</th>
+                            <th width="">Range of Testing Eqpt</th>
+                            <th width="">Metallic Materials</th>
+                            <th width="">TENSILE TESTING </th>
+                            <th width="">Active</th>
+                            <td class="text-nowrap">
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning"  data-toggle="modal" data-target="#myModaladd">
+                                <i class="icon wb-wrench" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="modal" data-target="#id">
+                                <i class="icon wb-trash" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="tooltip" data-original-title="">
+                                    <i class="icon wb-close" aria-hidden="true"></i>
+                                </button>
+                            </td>
+                        </tr>
+
                         @foreach($categories as $category)
                         <tr>
                             <td class="record_id" style="display: none;">{{ $category->id }}</td>

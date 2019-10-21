@@ -67,14 +67,17 @@
                         </thead>
                         <tbody>
 
-                        @foreach($categories as $category)
+
                         <tr>
-                            <td class="record_id" style="display: none;">{{ $category->id }}</td>
-                            <td class="record_name">{{ $category->category_name }}</td>
-                            <td>{{ date('d M Y',strtotime($category->created_at)) }}</td>
-                            <td class="text-center Recordstatus" status="{{ ($category->status==0) ? 1 : 0  }}">
-                                {{ ($category->status==0) ? 'Inactive' : 'Active' }}
-                            </td>
+                            <td> Goa Shipyard Ltd</td>
+                            <td> Goa Shipyard Ltd (Instrumentation Workshop) </td>
+                            <td> Vaddem House, Vasco-da-Gama, Goa - 403802</td>
+                            <td> Shri. J Sivaravi</td>
+                            <td> Shri. R N Majalikar</td>
+                            <td> 0832 2512152 extn. 5129</td>
+                            <td> 0832 2512153 extn. 5129</td>
+                            <td> 91-832-2513870 / 2513943 / 2513260 / 2512148 </td>
+                            <td> Active</td>
                             <td class="text-nowrap">
                                 <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning edit_record" data-toggle="tooltip"
                                         data-original-title="{{--Edit--}}">
@@ -84,13 +87,66 @@
                                         data-original-title="{{--Delete--}}">
                                     <i class="icon wb-trash" aria-hidden="true"></i>
                                 </button>
-                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning change_record_status" data-toggle="tooltip"
-                                        data-original-title="{{--{{ ($cuisine->status==0) ? 'Activate' : 'De-Activate' }}--}}">
-                                    <i class="icon wb-{{ ($category->status==0) ? 'close' : 'check' }}" aria-hidden="true"></i>
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="tooltip" data-original-title="">
+                                    <i class="icon wb-close" aria-hidden="true"></i>
                                 </button>
+                                
                             </td>
                         </tr>
-                        @endforeach
+
+                        <tr>
+                            <td>DGAQA</td>
+                            <td> AQAW(A), Khamaria</td>
+                            <td> Ordnance Factory Khamaria</td>
+                            <td> Gp. Capt. B Bose VSM , CO,AQAW(A),kahamaria</td>
+                            <td> Shri SK Swain , SSO-II</td>
+                            <td> 0761-2742708</td>
+                            <td>0761-2742711</td>
+                            <td> 0761-2338069 </td>
+                            <td> Active</td>
+                            <td class="text-nowrap">
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning edit_record" data-toggle="tooltip"
+                                        data-original-title="{{--Edit--}}">
+                                    <i class="icon wb-wrench" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning delete_record" data-toggle="tooltip"
+                                        data-original-title="{{--Delete--}}">
+                                    <i class="icon wb-trash" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="tooltip" data-original-title="">
+                                    <i class="icon wb-close" aria-hidden="true"></i>
+                                </button>
+                                
+                            </td>
+                        </tr>
+
+                         <tr>
+                            <td> Goa Shipyard Ltd</td>
+                            <td> Goa Shipyard Ltd (Instrumentation Workshop) </td>
+                            <td> Vaddem House, Vasco-da-Gama, Goa - 403802</td>
+                            <td> Shri. J Sivaravi</td>
+                            <td> Shri. R N Majalikar</td>
+                            <td> 0832 2512152 extn. 5129</td>
+                            <td> 0832 2512153 extn. 5129</td>
+                            <td> 91-832-2513870 / 2513943 / 2513260 / 2512148 </td>
+                            <td> Active</td>
+                            <td class="text-nowrap">
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning edit_record" data-toggle="tooltip"
+                                        data-original-title="{{--Edit--}}">
+                                    <i class="icon wb-wrench" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning delete_record" data-toggle="tooltip"
+                                        data-original-title="{{--Delete--}}">
+                                    <i class="icon wb-trash" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="tooltip" data-original-title="">
+                                    <i class="icon wb-close" aria-hidden="true"></i>
+                                </button>
+                                
+                            </td>
+                        </tr>
+
+                        
                         </tbody>
                     </table>
                     {{-- $categories->links() --}}
