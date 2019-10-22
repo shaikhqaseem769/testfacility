@@ -109,7 +109,7 @@ function editRecord(rid, rname, url){
 	  dangerMode: true,
 	}).then(function(isConfirm) {
 	    if (isConfirm) {
-	        window.location.href = url;
+        window.location.href = url;
 
 	    }
 	});

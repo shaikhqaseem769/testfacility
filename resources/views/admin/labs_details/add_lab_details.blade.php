@@ -67,7 +67,7 @@
                             <div class="form-group row">
                                 <label for="email_id_cno" class="col-md-4"><span class="text-danger">*</span>Email id of Central Nodal Officer:</label>
                                 <div class="col-md-8">
-                                    <input type="email" class="form-control" placeholder="Email id of Central Nodal Officer" id="email_id_cno" name="email_id_cno">
+                                    <input type="email" class="form-control" placeholder="Email id of Central Nodal Officer" id="email_id_cno" name="email_id_cno" readonly>
                                     <span class="help-block text-help text-danger" id="email_id_cno-block"></span>
                                 </div>
                             </div>
@@ -78,7 +78,7 @@
                             <div class="form-group row">
                                 <label for="email_id_of_stablishment" class="col-md-4"><span class="text-danger">*</span>Email id of Establishment:</label>
                                 <div class="col-md-8">
-                                    <input type="email" class="form-control" placeholder="Email id of Establishment" id="email_id_of_stablishment" name="email_id_of_stablishment">
+                                    <input type="email" class="form-control" placeholder="Email id of Establishment" id="email_id_of_stablishment" name="email_id_of_stablishment" readonly>
                                     <span class="help-block text-help text-danger" id="email_id_of_stablishment-block"></span>
                                 </div>
                             </div>
