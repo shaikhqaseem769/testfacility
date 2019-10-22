@@ -40,7 +40,21 @@ Route::get('/', function () {
 	return (!Auth::check() ? redirect('/login') : redirect('dashboard'));
 });
 
-Route::namespace('Admin')->group(function () {
+
+
+Route::group(['middleware'=>'auth', 'namespace'=>'Admin'], function(){
+
+    // Organisation  Add, Update, delete and change status
+    Route::get('organisation-list', 'OrganisationsController@organisationList')->name('organisation-list');
+    Route::get('add-organisation/{id?}', 'OrganisationsController@addAndEditOrganisation')->name('add-organisation');
+    Route::post('organisation', 'OrganisationsController@saveAndUpdateOrganisation')->name('organisation');
+    Route::post('change-organisation-status', 'OrganisationsController@changeOrganisationStatus')->name('change-organisation-status');
+    Route::delete('delete-organisation/{id}', 'OrganisationsController@deleteOrganisation')->name('delete-organisation');
+    Route::get('organisation-data/{id}', 'OrganisationsController@organisationData')->name('organisation-data');
+    /*Route::get('organisation-master', function() {
+        return view('admin.master_data.organisation_master');
+    })->name('organisation-master');*/
+
 
 	// Category Add, Update, delete and change status
     Route::get('add-category/{id?}','CategoryController@addCategory')->name('add-category');
@@ -96,9 +110,9 @@ Route::namespace('Admin')->group(function () {
     })->name('book-test-rejected-list');
 
 
-    Route::get('organisation-master', function() {
-        return view('admin.master_data.organisation_master');
-    })->name('organisation-master');
+    
+
+    
 });
 
 
@@ -124,6 +138,11 @@ Route::get('/search', function () {
 Route::get('book-test', function () {
     return view('frontent.book_test');
 })->name('book-test');
+
+
+Route::get('book-test-approve-reject', function () {
+    return view('frontent.book_test_approved_reject');
+})->name('book-test-approve-reject');
 
 
 Route::get('reports', function () {

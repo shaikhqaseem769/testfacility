@@ -55,6 +55,9 @@
                             <div class="col-md-8">
                                 <select class="form-control" name="organisation_name" id="organisation_name">
                                     <option>Please Select Organisation</option>
+                                    @foreach($organisations as $organisation)
+                                        <option value="{{$organisation->id}}">{{$organisation->organisation_name}}</option>
+                                    @endforeach
                                 </select>
                                 <span class="help-block text-help text-danger" id="organisation_name-block"></span>
                             </div>
@@ -65,6 +68,9 @@
                             <div class="col-md-8">
                                 <select class="form-control" name="establishment" id="establishment">
                                     <option>Please Select Establishment having Test Facility</option>
+                                    <option>Bhanur Unit</option>
+                                    <option>Midhani</option>
+                                    <option>Kanchanbagh Unit</option>
                                 </select>
                                 <span class="help-block text-help text-danger" id="establishment-block"></span>
                             </div>

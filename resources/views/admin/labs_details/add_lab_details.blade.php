@@ -56,7 +56,10 @@
                                 <div class="col-md-8">
                                     <!-- <input type="text" class="form-control" placeholder="Organisation" id="organisation_name" name="organisation_name"> -->
                                     <select class="form-control"  id="organisation_name" name="organisation_name">
-                                        <option>Please Select Organization</option>
+                                        <option selected disabled>Please Select Organization</option>
+                                        @foreach($organisations as $organisation)
+                                            <option value="{{$organisation->id}}">{{$organisation->organisation_name}}</option>
+                                        @endforeach
                                     </select>
                                     <span class="help-block text-help text-danger" id="organisation_name-block"></span>
                                 </div>
@@ -151,94 +154,99 @@
     <div class="modal-dialog modal-xl modal-lg">
         <div class="modal-content">
             <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Lab Details</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <!-- Modal body -->
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-12 col-lg-12">
-                        <div class="example-wrap mb-0">
-                            <h4 class="example-title">Lab Details</h4>
-                            <div class="progress progress-xs my-10 ">
-                                <div class="progress-bar progress-bar-green" style="width: 100%"></div>
-                            </div>
-                        </div>
-                    </div>
+            <form action="" id="addLabsDetails" method="POST" enctype="multipart/form-data">
+                 {{ csrf_field() }}
+                <div class="modal-header">
+                    <h4 class="modal-title">Lab Details</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-                <div class="row">
-                    <div class="col-md-6 col-lg-6" >
-                        <div class="example-wrap mb-35">
-                            <div class="form-group row">
-                                <label for="establishment" class="col-md-4"><span class="text-danger">*</span>Establishment having Test Facility:</label>
-                                <div class="col-md-8">
-                                    <input type="text" class="form-control" placeholder="Establishment having Test Facility" id="establishment" name="establishment">
-                                    <span class="help-block text-help text-danger" id="establishment-block"></span>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="address" class="col-md-4"><span class="text-danger">*</span>Address:</label>
-                                <div class="col-md-8">
-                                    <textarea rows="5" class="form-control" placeholder="Address" id="address" name="address"></textarea>
-                                    <span class="help-block text-help text-danger" id="address-block"></span>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="details_of_cno" class="col-md-4"><span class="text-danger">*</span>Details of Central Nodal Officer:</label>
-                                <div class="col-md-8">
-                                    <textarea rows="5" class="form-control" placeholder="Details of Central Nodal Officer" id="details_of_cno" name="details_of_cno"></textarea>
-                                    <span class="help-block text-help text-danger" id="details_of_cno-block"></span>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="details_of_no" class="col-md-4"><span class="text-danger">*</span>Details of Nodal Officer:</label>
-                                <div class="col-md-8">
-                                    <textarea rows="5" class="form-control" placeholder="Details of Nodal Officer" id="details_of_no" name="details_of_no"></textarea>
-                                    <span class="help-block text-help text-danger" id="details_of_no-block"></span>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="example-wrap mb-0">
+                                <h4 class="example-title">Lab Details</h4>
+                                <div class="progress progress-xs my-10 ">
+                                    <div class="progress-bar progress-bar-green" style="width: 100%"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6">
-                        <div class="example-wrap mb-35">
-                            <div class="form-group row">
-                                <label for="email_id_no" class="col-md-4"><span class="text-danger">*</span>Email id of Nodal Officer:</label>
-                                <div class="col-md-8">
-                                    <input type="email" class="form-control" placeholder="Email id of Central Nodal Officer" id="email_id_no" name="email_id_no">
-                                    <span class="help-block text-help text-danger" id="email_id_no-block"></span>
+                    
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6" >
+                            <div class="example-wrap mb-35">
+                                <div class="form-group row">
+                                    <label for="establishment" class="col-md-4"><span class="text-danger">*</span>Establishment having Test Facility:</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" placeholder="Establishment having Test Facility" id="establishment" name="establishment">
+                                        <span class="help-block text-help text-danger" id="establishment-block"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="address" class="col-md-4"><span class="text-danger">*</span>Address:</label>
+                                    <div class="col-md-8">
+                                        <textarea rows="5" class="form-control" placeholder="Address" id="address" name="address"></textarea>
+                                        <span class="help-block text-help text-danger" id="address-block"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="details_of_cno" class="col-md-4"><span class="text-danger">*</span>Details of Central Nodal Officer:</label>
+                                    <div class="col-md-8">
+                                        <textarea rows="5" class="form-control" placeholder="Details of Central Nodal Officer" id="details_of_cno" name="details_of_cno"></textarea>
+                                        <span class="help-block text-help text-danger" id="details_of_cno-block"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="details_of_no" class="col-md-4"><span class="text-danger">*</span>Details of Nodal Officer:</label>
+                                    <div class="col-md-8">
+                                        <textarea rows="5" class="form-control" placeholder="Details of Nodal Officer" id="details_of_no" name="details_of_no"></textarea>
+                                        <span class="help-block text-help text-danger" id="details_of_no-block"></span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="phone_number_1" class="col-md-4"><span class="text-danger">*</span>Tel. Phone No 1:</label>
-                                <div class="col-md-8">
-                                    <input type="text" class="form-control" placeholder="Tel. Phone No 1" id="phone_number_1" name="phone_number_1">
-                                    <span class="help-block text-help text-danger" id="phone_number_1-block"></span>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <div class="example-wrap mb-35">
+                                <div class="form-group row">
+                                    <label for="email_id_no" class="col-md-4"><span class="text-danger">*</span>Email id of Nodal Officer:</label>
+                                    <div class="col-md-8">
+                                        <input type="email" class="form-control" placeholder="Email id of Central Nodal Officer" id="email_id_no" name="email_id_no">
+                                        <span class="help-block text-help text-danger" id="email_id_no-block"></span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="phone_number_2" class="col-md-4"><span class="text-danger">*</span>Tel. Phone No 2:</label>
-                                <div class="col-md-8">
-                                    <input type="text" class="form-control" placeholder="Tel. Phone No 2" id="phone_number_2" name="phone_number_2">
-                                    <span class="help-block text-help text-danger" id="phone_number_2-block"></span>
+                                <div class="form-group row">
+                                    <label for="phone_number_1" class="col-md-4"><span class="text-danger">*</span>Tel. Phone No 1:</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" placeholder="Tel. Phone No 1" id="phone_number_1" name="phone_number_1">
+                                        <span class="help-block text-help text-danger" id="phone_number_1-block"></span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="fax_number" class="col-md-4"><span class="text-danger">*</span>Fax No:</label>
-                                <div class="col-md-8">
-                                    <input type="text" class="form-control" placeholder="Fax No" id="fax_number" name="fax_number">
-                                    <span class="help-block text-help text-danger" id="fax_number-block"></span>
+                                <div class="form-group row">
+                                    <label for="phone_number_2" class="col-md-4"><span class="text-danger">*</span>Tel. Phone No 2:</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" placeholder="Tel. Phone No 2" id="phone_number_2" name="phone_number_2">
+                                        <span class="help-block text-help text-danger" id="phone_number_2-block"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="fax_number" class="col-md-4"><span class="text-danger">*</span>Fax No:</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" placeholder="Fax No" id="fax_number" name="fax_number">
+                                        <span class="help-block text-help text-danger" id="fax_number-block"></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
-            </div>
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-lg btn-danger" data-dismiss="modal">Close</button>
-                <button class="btn btn-lg btn-success save_btn" type="submit">Add<img width="20" height="20" id="onboard_preloader" style="display: none" src="{{ asset('assets/images/preloader.gif') }}"></button> 
-            </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-lg btn-danger" data-dismiss="modal">Close</button>
+                    <button class="btn btn-lg btn-success save_btn addLabDetailsModal" type="submit">Add<img width="20" height="20" id="onboard_preloader" style="display: none" src="{{ asset('assets/images/preloader.gif') }}"></button> 
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -247,25 +255,62 @@
 @endsection
 @section('custom_scripts')
 <script type="text/javascript">
-    $('.removeLabs').on('click', function(){
-       alert('hello')
+   
+    $('form#addLabsDetails').on('submit', function (ev) {
+        ev.preventDefault();
+
+        let formData = new FormData($(this)[0]);
+        let recodIdExist = $('#organisation_id').val(); 
+
+        let successMessage = "Added!";
+        if(recodIdExist){
+            successMessage = "Updated!";
+        }
+
+        let url = APP_BASE_URL.concat('/organisation');
+        let formId = 'form_organisation';
+        let reloadUrl = APP_BASE_URL.concat('/organisation-list');
+
+        // window.location.href = reloadUrl;
+
+        /*formData.append('user_id',"{{ (Auth::check()) ? Auth::user()->id : '' }}");*/
+
+        addUpdateRecord(url, formData, successMessage, reloadUrl, formId);
     })
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function organisationDetails(organisationId) {
+        $.ajax({
+           url:APP_BASE_URL.concat('/organisation-data/'+organisationId),
+           cache:false,
+           method:'GET',
+           success:function(response){
+            // console.log(response)
+            if(response.success === true) {
+                $('#email_id_of_stablishment').val(response.organisation['establishment_email_id'])
+                $('#email_id_cno').val(response.organisation['cno_email_id'])
+            }  
+           }
+       })
+    }
     
-    $('.duplicateData').click(function(){
-       var addMultipleLab = '';
-    
-       addMultipleLab +="<div class='form-group row'>"+
-                           "<label for='email_id_cno' class='col-md-4'><span class='text-danger'>*</span>Email id of Central Nodal Officer:</label>"+
-                           "<div class='col-md-8'>"+
-                               "<input type='email' class='form-control' placeholder='Email id of Central Nodal Officer' id='email_id_cno' name='email_id_cno'>"+
-                               "<span class='help-block text-help text-danger' id=email_id_cno-block'></span>"+
-                           "</div>"+
-                       "</div> <a class='btn btn-lg btn-success removeLabs'>-</a> <br/>";
-       $('#addLabs').append(addMultipleLab);
+    $('#organisation_name').on('change', function () {
+        let organisationId = $(this).val();
+        organisationDetails(organisationId);
     });
-    
-    
-    
+
+    // organisationDetails();
     
     $('form#addLabs').submit(function(ev){
     

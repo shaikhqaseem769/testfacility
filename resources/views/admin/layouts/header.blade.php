@@ -51,9 +51,11 @@
                     <div id="google_translate_element"></div>
                 </li>
                 <li class="nav-item ">
+                    @if(Auth::user()->user_type === 'user')
                     <a class="nav-link"  href="{{ route('search') }}" > 
                         Search
                     </a>
+                    @endif
                     <!-- <a class="nav-link" data-toggle="dropdown" href="javascript:void(0)" data-animation="scale-up"
                        aria-expanded="false" role="button"> 
                         <span class="flag-icon flag-icon-in"></span>
@@ -75,7 +77,7 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link navbar-avatar" data-toggle="dropdown" href="#" aria-expanded="false"
-                       data-animation="scale-up" role="button">
+                       data-animation="scale-up" role="button">{{ Auth::user()->name }}
                       <span class="avatar avatar-online">
                         <img src="{{ asset('assets/portraits/5.jpg') }}" alt="...">
                         <i></i>

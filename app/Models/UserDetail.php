@@ -7,11 +7,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Organisation extends Model
+class UserDetail extends Model
 {
     use SoftDeletes;
-
-    // protected $table = 'categories';
 
     protected $guarded = [];
 

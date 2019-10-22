@@ -118,7 +118,7 @@ function editRecord(rid, rname, url){
 
 
 /*delete record from data base*/
-function deleteRecord(rid, rname, recordMessages){
+function deleteRecord(rid, rname, recordMessages, url){
 
 	swal({
       title: "Are you sure?",
@@ -137,7 +137,7 @@ function deleteRecord(rid, rname, recordMessages){
           icon: 'success'
         }).then(function() {
           $.ajax({
-            url:APP_BASE_URL.concat('/delete-category/',rid),
+            url:url,
             method:'DELETE',
             cache:false,
             headers:{

@@ -20,7 +20,7 @@ class CreateChildCategoriesTable extends Migration
             $table->string('child_category_name')->nullable();
             $table->string('description')->nullable();
             $table->integer('position')->default(0);
-            $table->tinyInteger('status')->default(1);
+            $table->boolean('status')->default(true)->comment('1 for active, 0 for de-active');
             $table->string('created_by', 100)->nullable();
             $table->string('updated_by', 100)->nullable();
             $table->timestamps();
@@ -28,6 +28,7 @@ class CreateChildCategoriesTable extends Migration
             $table->softDeletes();
 
             $table->index(['child_category_name']);
+            $table->index(['position', 'status']);
         });
     }
 

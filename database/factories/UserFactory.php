@@ -18,9 +18,10 @@ use Faker\Generator as Faker;
 
 $factory->define(User::class, function (Faker $faker) {
     return [
-        'id' => 'd5152030',
+        'id' => '38d6019e-ee7c-11e9-a218-00e04c303b3d',
         'fname' => 'Admin',
         'lname' => '',
+        'name' => 'Admin',
         'email' => 'admin@gmail.com',
         'mobile' => '0000000000',
         'gender' => 'male',
@@ -30,6 +31,5 @@ $factory->define(User::class, function (Faker $faker) {
         'status' => 1,
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         'remember_token' => Str::random(10),
-
     ];
 });

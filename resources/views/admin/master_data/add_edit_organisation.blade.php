@@ -14,7 +14,7 @@
 
                 <div class="page-header-actions">
 
-                    <a class="btn btn-sm btn-default btn-outline btn-round {{ Route::is('category-list') ? 'active' : '' }}" href="{{  route('category-list') }}">
+                    <a class="btn btn-sm btn-default btn-outline btn-round {{ Route::is('organisation-list') ? 'active' : '' }}" href="{{  route('organisation-list') }}">
                         <i class="icon wb-list-bulleted" aria-hidden="true"></i>
                         <span class="hidden-sm-down"> Organisation</span>
                     </a>
@@ -42,30 +42,30 @@
                         </div>
                     </div>
                 </div>
-                <form action="" id="add_form" method="POST" enctype="multipart/form-data">
+                <form action="" id="form_organisation" method="POST" enctype="multipart/form-data">
          {{ csrf_field() }}
-         <input type="hidden" name="category_id" id="category_id" value="{{ isset($category->id) ? $category->id : '' }}">
+         <input type="hidden" name="organisation_id" id="organisation_id" value="{{ isset($organisation->id) ? $organisation->id : '' }}">
         <div class="row">
             <div class="col-md-6 col-lg-6">
                 <div class="example-wrap mb-35">
                     <div class="form-group row">
                         <label for="organisation_name" class="col-md-4"><span class="text-danger">*</span>Organisation Name:</label>
                         <div class="col-md-8">
-                            <input type="text" class="form-control" placeholder="Organisation Name" id="organisation_name" name="organisation_name" value="{{ isset($category->organisation_name) ? $category->organisation_name : old('organisation_name')}}">
+                            <input type="text" class="form-control" placeholder="Organisation Name" id="organisation_name" name="organisation_name" value="{{ isset($organisation->organisation_name) ? $organisation->organisation_name : old('organisation_name')}}">
                             <span class="help-block text-help text-danger" id="organisation_name-block"></span>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="establishment_email_id" class="col-md-4">Email id of Establishment:</label>
                         <div class="col-md-8">
-                            <input type="email" class="form-control" placeholder="Email id of Establishment" id="establishment_email_id" name="establishment_email_id" value="{{ isset($category->position) ? $category->position : old('establishment_email_id')}}">
+                            <input type="email" class="form-control" placeholder="Email id of Establishment" id="establishment_email_id" name="establishment_email_id" value="{{ isset($organisation->establishment_email_id) ? $organisation->establishment_email_id : old('establishment_email_id')}}">
                             <span class="help-block text-help text-danger" id="establishment_email_id-block"></span>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="cno_email_id" class="col-md-4">Email id of Central Nodal Officer:</label>
                         <div class="col-md-8">
-                            <input type="email" class="form-control" placeholder="Email id of Central Nodal Officer" id="cno_email_id" name="cno_email_id" value="{{ isset($category->position) ? $category->position : old('cno_email_id')}}">
+                            <input type="email" class="form-control" placeholder="Email id of Central Nodal Officer" id="cno_email_id" name="cno_email_id" value="{{ isset($organisation->cno_email_id) ? $organisation->cno_email_id : old('cno_email_id')}}">
                             <span class="help-block text-help text-danger" id="cno_email_id-block"></span>
                         </div>
                     </div>
@@ -93,27 +93,27 @@
 
     <script type="text/javascript">
 
-        $('form#add_form').submit(function(ev){
+        $('form#form_organisation').submit(function(ev){
 
             ev.preventDefault();
 
             let formData = new FormData($(this)[0]);
-            let recodIdExist = $('#category_id').val(); 
+            let recodIdExist = $('#organisation_id').val(); 
 
             let successMessage = "Added!";
             if(recodIdExist){
                 successMessage = "Updated!";
             }
 
-            let url = APP_BASE_URL.concat('/save-category');
-            let formId = 'add_form';
-            let reloadUrl = APP_BASE_URL.concat('/organisation-master');
+            let url = APP_BASE_URL.concat('/organisation');
+            let formId = 'form_organisation';
+            let reloadUrl = APP_BASE_URL.concat('/organisation-list');
 
-            window.location.href = reloadUrl;
+            // window.location.href = reloadUrl;
 
             /*formData.append('user_id',"{{ (Auth::check()) ? Auth::user()->id : '' }}");*/
 
-            // addUpdateRecord(url, formData, successMessage, reloadUrl, formId);
+            addUpdateRecord(url, formData, successMessage, reloadUrl, formId);
 
             
         });

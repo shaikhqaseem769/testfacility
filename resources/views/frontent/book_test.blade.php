@@ -68,9 +68,15 @@
                     <div class="col-md-6 col-lg-6">
                         <div class="example-wrap mb-35">
                             <div class="form-group row">
-                                <label for="category_name" class="col-md-4"><span class="text-danger">*</span>Equipment Name:</label>
+                                <label for="category_name" class="col-md-4"><span class="text-danger">*</span>Organisation Name:</label>
                                 <div class="col-md-8">
-                                    STEEL, BRASS ALUMINIUM
+                                    Goa Shipyard Ltd
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="category_name" class="col-md-4"><span class="text-danger">*</span>Location:</label>
+                                <div class="col-md-8">
+                                    Goa
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -92,9 +98,15 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <label for="category_name" class="col-md-4"><span class="text-danger">*</span>Price:</label>
+                                <div class="col-md-8">
+                                    RT : Rs. 975      HT:  Rs. 5700 
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label for="description" class="col-md-4">Description:</label>
                                 <div class="col-md-8">
-                                    <textarea rows="5" class="form-control" placeholder="Description" id="description" name="description">{{ isset($category->description) ? $category->description : old('description')}}</textarea>
+                                    <textarea rows="5" class="form-control" placeholder="Any Special Remarks for Test" id="description" name="description">{{ isset($category->description) ? $category->description : old('description')}}</textarea>
                                     <span class="help-block text-help text-danger" id="description-block"></span>
                                 </div>
                             </div>
@@ -133,7 +145,8 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <button class="btn btn-lg btn-success save_btn" type="submit">Order<img width="20" height="20" id="menu_category_preloader" style="display: none" src="{{ asset('assets/images/preloader.gif') }}"></button>
+                        <button class="btn btn-lg btn-success save_btn" type="submit">Cancel<img width="20" height="20" id="menu_category_preloader" style="display: none" src="{{ asset('assets/images/preloader.gif') }}"></button>
+                        <button class="btn btn-lg btn-success save_btn" type="submit">Submit<img width="20" height="20" id="menu_category_preloader" style="display: none" src="{{ asset('assets/images/preloader.gif') }}"></button>
                     </div>
                 </div>
             </form>

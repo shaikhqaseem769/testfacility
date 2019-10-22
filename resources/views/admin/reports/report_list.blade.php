@@ -50,7 +50,6 @@
                                         <option>Process</option>
                                         <option>Rejected</option>
                                         <option>Completed</option>
-                                        <option>Completed</option>
                                     </select>
                                 </div>
                                 
@@ -177,6 +176,28 @@
                                 <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning statusModelDetails" data-toggle="tooltip"
                                         data-original-title="{{--Edit--}}">
                                     Processing
+                                </button> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Goa Shipyard Ltd</td>
+                            <td>Goa Shipyard Ltd</td>
+                            <td>Instrumentation Workshop</td>
+                            <td>Goa</td>
+                            <td>Electrical/ Electronics</td>
+                            <td>Current Injector (Primary)</td>
+                            <td>Delta Marketing</td>
+                            <td>0- 2000Amps</td>
+                            <td>Calibration & Testing ACBs, MCCBs for LT tripping</td>
+                            <td> ACBs, MCCBs for LT tripping </td>
+                            <td>Up o 500 mm Thickness</td>
+                            <td>35 Kgs</td>
+                            <td>180 Minutes </td>
+                            <td>Rs 22680/</td>
+                            <td class="text-nowrap">
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning statusModelDetails" data-toggle="tooltip"
+                                        data-original-title="{{--Edit--}}">
+                                    Completed
                                 </button> 
                             </td>
                         </tr>
