@@ -111,6 +111,22 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <label for="position" class="col-md-4"><span class="text-danger">*</span>Dimension of Eqpt to be tested :</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" placeholder="Dimension of Eqpt to be tested " id="position" name="position" value="{{ isset($category->position) ? $category->position : old('position')}}">
+
+                                    <span class="help-block text-help text-danger" id="position-block"></span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="position" class="col-md-4"><span class="text-danger">*</span>Weight of Eqpt to be tested :</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" placeholder="Weight of Eqpt to be tested " id="position" name="position" value="{{ isset($category->position) ? $category->position : old('position')}}">
+
+                                    <span class="help-block text-help text-danger" id="position-block"></span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label for="position" class="col-md-4"><span class="text-danger">*</span>Date:</label>
                                 <div class="col-md-8">
                                     <input type="text" class="form-control" placeholder="Date" id="position" name="position" value="{{ isset($category->position) ? $category->position : old('position')}}">
@@ -301,7 +317,11 @@
 @endsection
 @section('custom_scripts')
 <script type="text/javascript">
-    $('#myModaladd').modal('show');
+    let userLoginCheck = "{{ (Auth::check()) ? Auth::user()->id : '' }}";
+
+    if(!userLoginCheck){
+      $('#myModaladd').modal('show');
+    }
     $('#signup').hide();
     $('#login').hide();
     

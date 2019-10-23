@@ -100,14 +100,20 @@ Route::group(['middleware'=>'auth', 'namespace'=>'Admin'], function(){
     Route::get('book-test-accepted-list', function() {
         $categories = [];
         $page_title = 'Booking Test Accepted';
-        return view('admin.booking.book_test_list', compact('categories', 'page_title'));
+        return view('admin.booking.booking_test_accepted', compact('categories', 'page_title'));
     })->name('book-test-accepted-list');
 
     Route::get('book-test-rejected-list', function() {
         $categories = [];
         $page_title = 'Booking Test Rejected';
-        return view('admin.booking.book_test_list', compact('categories', 'page_title'));
+        return view('admin.booking.booking_test_rejected', compact('categories', 'page_title'));
     })->name('book-test-rejected-list');
+
+    Route::get('book-test-process-list', function() {
+        $categories = [];
+        $page_title = 'Booking Test Process';
+        return view('admin.booking.book_test_process_list', compact('categories', 'page_title'));
+    })->name('book-test-process-list');
 
 
     

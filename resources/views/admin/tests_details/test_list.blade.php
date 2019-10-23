@@ -79,15 +79,18 @@
                             
                             <td> Active </td>
                             <td class="text-nowrap">
-                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning"  data-toggle="modal" data-target="#myModaladd">
-                                <i class="icon wb-wrench" aria-hidden="true"></i>
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning edit_record" data-toggle="tooltip"
+                                        data-original-title="{{--Edit--}}">
+                                    <i class="icon wb-wrench" aria-hidden="true"></i>
                                 </button>
-                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="modal" data-target="#id">
-                                <i class="icon wb-trash" aria-hidden="true"></i>
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning delete_record" data-toggle="tooltip"
+                                        data-original-title="{{--Delete--}}">
+                                    <i class="icon wb-trash" aria-hidden="true"></i>
                                 </button>
                                 <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="tooltip" data-original-title="">
                                     <i class="icon wb-close" aria-hidden="true"></i>
                                 </button>
+                                
                             </td>
                         </tr>
 
@@ -102,15 +105,18 @@
                             <th width="">TENSILE TESTING </th>
                             <th width="">Active</th>
                             <td class="text-nowrap">
-                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning"  data-toggle="modal" data-target="#myModaladd">
-                                <i class="icon wb-wrench" aria-hidden="true"></i>
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning edit_record" data-toggle="tooltip"
+                                        data-original-title="{{--Edit--}}">
+                                    <i class="icon wb-wrench" aria-hidden="true"></i>
                                 </button>
-                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="modal" data-target="#id">
-                                <i class="icon wb-trash" aria-hidden="true"></i>
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning delete_record" data-toggle="tooltip"
+                                        data-original-title="{{--Delete--}}">
+                                    <i class="icon wb-trash" aria-hidden="true"></i>
                                 </button>
                                 <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="tooltip" data-original-title="">
                                     <i class="icon wb-close" aria-hidden="true"></i>
                                 </button>
+                                
                             </td>
                         </tr>
                         <tr>
@@ -124,15 +130,18 @@
                             <th width="">Parameter/ Name of Test</th>
                             <th width="">Active</th>
                             <td class="text-nowrap">
-                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning"  data-toggle="modal" data-target="#myModaladd">
-                                <i class="icon wb-wrench" aria-hidden="true"></i>
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning edit_record" data-toggle="tooltip"
+                                        data-original-title="{{--Edit--}}">
+                                    <i class="icon wb-wrench" aria-hidden="true"></i>
                                 </button>
-                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="modal" data-target="#id">
-                                <i class="icon wb-trash" aria-hidden="true"></i>
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning delete_record" data-toggle="tooltip"
+                                        data-original-title="{{--Delete--}}">
+                                    <i class="icon wb-trash" aria-hidden="true"></i>
                                 </button>
                                 <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="tooltip" data-original-title="">
                                     <i class="icon wb-close" aria-hidden="true"></i>
                                 </button>
+                                
                             </td>
                         </tr>
                         </tbody>
@@ -163,12 +172,12 @@ $('.change_record_status').click(function(ev){
     var status = $(ev.target).closest('tr').find('td.Recordstatus').attr('status');
     
     let recordMessages = {
-        notConfirm : rname+' category Status has not been changed!',
-        confirm : rname+' category Status has been changed!',
+        notConfirm : rname+' test Status has not been changed!',
+        confirm : rname+' test Status has been changed!',
         textMessage : 'Do you want to change status '+((status==1) ? 'Activate' : 'De-Activate')+' '+rname+'?',
     };
 
-    let url = APP_BASE_URL.concat('/change-category-status');
+    let url = APP_BASE_URL.concat('/change-test-status');
 
     /*function call define in custom_js.js file inside js folder*/
     changeRecordStatus(rid, status, url, recordMessages);
@@ -180,7 +189,7 @@ $('.edit_record').click(function(ev){
     
     var rid = $(ev.target).closest('tr').find('td.record_id').text();
     var rname = $(ev.target).closest('tr').find('td.record_name').text();
-    var url = APP_BASE_URL.concat('/add-category/', rid);
+    var url = APP_BASE_URL.concat('/add-test/', rid);
     editRecord(rid, rname, url);
     
 })
@@ -192,7 +201,7 @@ $('.delete_record').click(function(ev){
     var rname = $(ev.target).closest('tr').find('td.record_name').text();
 
     let recordMessages = {
-        textMessage : rname+' category Status has been deleted!',
+        textMessage : rname+' test Status has been deleted!',
     };
 
     deleteRecord(rid, rname, recordMessages);

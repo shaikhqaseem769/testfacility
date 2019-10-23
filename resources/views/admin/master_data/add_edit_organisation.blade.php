@@ -69,6 +69,13 @@
                             <span class="help-block text-help text-danger" id="cno_email_id-block"></span>
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <label for="details_of_cno" class="col-md-4"><span class="text-danger">*</span>Details of Central Nodal Officer:</label>
+                        <div class="col-md-8">
+                            <textarea rows="5" class="form-control" placeholder="Details of Central Nodal Officer" id="details_of_cno" name="details_of_cno">{{ isset($organisation->details_of_cno) ? $organisation->details_of_cno : old('details_of_cno')}}</textarea>
+                            <span class="help-block text-help text-danger" id="details_of_cno-block"></span>
+                        </div>
+                    </div>
                     
                 </div>
             </div>

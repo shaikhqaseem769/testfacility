@@ -18,6 +18,7 @@ class CreateOrganisationsTable extends Migration
             $table->string('organisation_name')->nullable()->comment('organisation name');
             $table->string('establishment_email_id')->nullable()->comment('email id of organisation');
             $table->string('cno_email_id')->nullable()->comment('Central Nodal Officer email id');
+            $table->string('details_of_cno')->nullable()->comment('Central Nodal Officer address');
             $table->boolean('status')->default(true)->comment('1 for active and 0 for de-active');
             $table->string('created_by')->nullable();
             $table->string('updated_by')->nullable();

@@ -64,15 +64,13 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="establishment" class="col-md-4"><span class="text-danger">*</span>Establishment having Test Facility:</label>
+                            <label for="location" class="col-md-4"><span class="text-danger">*</span>Location:</label>
                             <div class="col-md-8">
-                                <select class="form-control" name="establishment" id="establishment">
-                                    <option>Please Select Establishment having Test Facility</option>
-                                    <option>Bhanur Unit</option>
-                                    <option>Midhani</option>
-                                    <option>Kanchanbagh Unit</option>
-                                </select>
-                                <span class="help-block text-help text-danger" id="establishment-block"></span>
+                                <!-- <select class="form-control" name="location" id="location">
+                                    <option>Please Select Location</option>
+                                </select> -->
+                                <input type="text" class="form-control" placeholder="Location" id="location" name="location">
+                                <span class="help-block text-help text-danger" id="location-block"></span>
                             </div>
                         </div>
 
@@ -95,28 +93,31 @@
                     </div>
                     <div class="col-md-6 col-lg-6" >
                         <div class="example-wrap mb-35">
+                            
                             <div class="form-group row">
-                            <label for="location" class="col-md-4"><span class="text-danger">*</span>Location:</label>
-                            <div class="col-md-8">
-                                <!-- <select class="form-control" name="location" id="location">
-                                    <option>Please Select Location</option>
-                                </select> -->
-                                <input type="text" class="form-control" placeholder="Location" id="location" name="location">
-                                <span class="help-block text-help text-danger" id="location-block"></span>
+                                <label for="establishment" class="col-md-4"><span class="text-danger">*</span>Establishment having Test Facility:</label>
+                                <div class="col-md-8">
+                                    <select class="form-control" name="establishment" id="establishment">
+                                        <option>Please Select Establishment having Test Facility</option>
+                                        <option>Bhanur Unit</option>
+                                        <option>Midhani</option>
+                                        <option>Kanchanbagh Unit</option>
+                                    </select>
+                                    <span class="help-block text-help text-danger" id="establishment-block"></span>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group row">
-                            <label for="discipline" class="col-md-4"><span class="text-danger">*</span>Discipline:</label>
-                            <div class="col-md-8">
-                                <!-- <select class="form-control" id="discipline" name="discipline">
-                                    <option>Please Select Discipline</option>
-                                </select> -->
-                                <input type="text" class="form-control" placeholder="Discipline" id="discipline" name="discipline">
-                                
-                                <span class="help-block text-help text-danger" id="discipline-block"></span>
+                            <div class="form-group row">
+                                <label for="discipline" class="col-md-4"><span class="text-danger">*</span>Discipline:</label>
+                                <div class="col-md-8">
+                                    <!-- <select class="form-control" id="discipline" name="discipline">
+                                        <option>Please Select Discipline</option>
+                                    </select> -->
+                                    <input type="text" class="form-control" placeholder="Discipline" id="discipline" name="discipline">
+                                    
+                                    <span class="help-block text-help text-danger" id="discipline-block"></span>
+                                </div>
                             </div>
-                        </div>
                         </div>
                     </div>
                 </div>

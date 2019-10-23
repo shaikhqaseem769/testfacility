@@ -84,6 +84,17 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-6 col-lg-6" >
+                        <div class="example-wrap mb-35">
+                            <div class="form-group row">
+                                <label for="details_of_cno" class="col-md-4"><span class="text-danger">*</span>Details of Central Nodal Officer:</label>
+                                <div class="col-md-8">
+                                    <textarea rows="5" class="form-control" placeholder="Details of Central Nodal Officer" id="details_of_cno" name="details_of_cno" readonly></textarea>
+                                    <span class="help-block text-help text-danger" id="details_of_cno-block"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
@@ -98,7 +109,7 @@
                                     <tr>
                                         <th width="15%">Establishment having Test Facility</th>
                                         <th width="12%">Address</th>
-                                        <th width="14%">Details of Central Nodal Officer</th>
+                                        <!-- <th width="14%">Details of Central Nodal Officer</th> -->
                                         <th width="14%">Details of Nodal Officer</th>
                                         <th width="14%">Email id of Nodal Officer</th>
                                         <th width="14%">Tel. Phone No 1</th>
@@ -111,9 +122,9 @@
                                     <tr>
                                         <td class="record_id" style="display: none;">{{-- $category->id --}}</td>
                                         <td class="record_name">AXIAL-HIGH CYCLE FATIGUE K1c & J1c Testing</td>
-                                        <td class="">Metallic Materials</td>
-                                        <td class=""> ASTM/IS/GOST/BS/AMS</td>
-                                        <td>Electrical/ Electronics</td>
+                                        <td class="">Bhanur, Sangareddy District, 502 305</td>
+                                        <!-- <td class=""> ASTM/IS/GOST/BS/AMS</td> -->
+                                        <td>K SRIKRISHNA SAI  ,  AGM (QS)</td>
                                         <td class="">abc@gmail.com</td>
                                         <td  > 56784564345 </td>
                                         <td  > 97574645635 </td>
@@ -190,13 +201,7 @@
                                         <span class="help-block text-help text-danger" id="address-block"></span>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label for="details_of_cno" class="col-md-4"><span class="text-danger">*</span>Details of Central Nodal Officer:</label>
-                                    <div class="col-md-8">
-                                        <textarea rows="5" class="form-control" placeholder="Details of Central Nodal Officer" id="details_of_cno" name="details_of_cno"></textarea>
-                                        <span class="help-block text-help text-danger" id="details_of_cno-block"></span>
-                                    </div>
-                                </div>
+                                
                                 <div class="form-group row">
                                     <label for="details_of_no" class="col-md-4"><span class="text-danger">*</span>Details of Nodal Officer:</label>
                                     <div class="col-md-8">
@@ -300,6 +305,7 @@
             if(response.success === true) {
                 $('#email_id_of_stablishment').val(response.organisation['establishment_email_id'])
                 $('#email_id_cno').val(response.organisation['cno_email_id'])
+                $('#details_of_cno').val(response.organisation['details_of_cno'])
             }  
            }
        })

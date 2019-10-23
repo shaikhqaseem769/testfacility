@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class OrganisationsController extends Controller
 {
     public function organisationList() {
-    	$organisations = Organisation::select('id', 'organisation_name', 'establishment_email_id', 'cno_email_id', 'status')->paginate(10);
+    	$organisations = Organisation::select('id', 'organisation_name', 'establishment_email_id', 'details_of_cno', 'cno_email_id', 'status')->paginate(10);
     	// dd($organisations->total());
     	return view('admin.master_data.organisation_list', compact('organisations'));
     }
@@ -30,6 +30,7 @@ class OrganisationsController extends Controller
     		'organisation_name' => 'required|string|min:3|max:150|unique:organisations,organisation_name,'.$organisationId.',id,deleted_at,NULL',
     		'establishment_email_id' => 'required|email|min:3|max:150|unique:organisations,establishment_email_id,'.$organisationId.',id,deleted_at,NULL',
     		'cno_email_id' => 'required|email|min:3|max:150|unique:organisations,cno_email_id,'.$organisationId.',id,deleted_at,NULL',
+            'details_of_cno' => 'required|min:3|max:150|string',
     	]);
 
     	try{
@@ -44,6 +45,7 @@ class OrganisationsController extends Controller
 	    	$organisation->organisation_name = $request->organisation_name;
 	    	$organisation->establishment_email_id = $request->establishment_email_id;
 	    	$organisation->cno_email_id = $request->cno_email_id;
+            $organisation->details_of_cno = $request->details_of_cno;
 	    	$organisation->save();
 
 	    	return response()->json(['success' => true, 'message' => $message], 200);
@@ -95,7 +97,7 @@ class OrganisationsController extends Controller
 	}
 
     public function organisationData($organisationId) {
-    	$organisation = Organisation::select('id', 'establishment_email_id', 'cno_email_id')->find($organisationId);
+    	$organisation = Organisation::select('id', 'establishment_email_id', 'details_of_cno', 'cno_email_id')->find($organisationId);
 
     	return response()->json(['success' => true, 'organisation' => $organisation], 200);
     }

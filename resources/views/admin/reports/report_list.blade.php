@@ -29,6 +29,7 @@
                         </div>
                         <form>
                             <div class="row">
+                                @if(Auth::user()->user_type === 'admin')
                                 <div class="col">
                                     <!-- <input type="text" class="form-control" placeholder="Organisation"> -->
                                     <select class="form-control" id="">
@@ -37,6 +38,7 @@
                                         <option>DGAQA</option>
                                     </select>
                                 </div>
+                                @endif
                                 <div class="col">
                                     <select class="form-control" id="">
                                         <option>Please Select Establishment having Test Facility</option>
@@ -79,7 +81,7 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-12">
                         <div class="example-wrap mb-0 mt-0">
-                            <h4 class="example-title">Total <code>0</code> Reparts</h4>
+                            <h4 class="example-title">Total <code>0</code> Reports</h4>
                             <div class="progress progress-xs my-10 ">
                                 <div class="progress-bar progress-bar-green" style="width: 100%"></div>
                             </div>
@@ -92,40 +94,40 @@
                     <table class="table table-bordered">
                         <thead>
                         <tr>
-                            <th width="">Organisation Name</th>
-                            <th width="">Establishment having Test Facility </th>
-                            <th width="">Lab </th>
-                            <th width="">Location</th>
-                            <th width="">Discipline</th>
-                            <th width="">Test/Calibration Facility (apparatus name)</th>
-                            <th width="">Test Eqpt manufacturer</th>
-                            <th width="">Range of Testing Eqpt</th>
-                            <th width="">Eqpt/Product/ Material to be Tested</th>
-                            <th width="">Parameter/ Name of Test</th>
-                            <th width="">Max Dimension of Eqpt to be tested</th>
-                            <th width="">Max Weight of Eqpt to be tested</th>
-                            <th width="">Duration of Test </th>
-                            <th width="">Testing Charges/Sample (excluding GST)</th>
-                            <th width="" class="text-nowrap">Status</th>
+                            <th width="" class="text-center" rowspan="2">Organisation Name</th>
+                            <th width="" class="text-center" rowspan="2">Lab </th>
+                            <th width="" class="text-center" rowspan="2">Location</th>
+                            <th width="" class="text-center" rowspan="2">Discipline</th>
+                            <th width="" class="text-center" rowspan="2">Parameter/ Name of Test</th>
+                            <th width="" class="text-center" rowspan="2">Eqpt/Product/ Material to be Tested</th>
+                            <th width="" class="text-center" rowspan="2">User Name</th>
+                            <th width="" class="text-center" rowspan="2">Dimension of Eqpt to be tested</th>
+                            <th width="" class="text-center" rowspan="2">Weight of Eqpt to be tested</th>
+                            <th width="" class="text-center" colspan="2">Date</th>
+                            <th width="" class="text-center" rowspan="2">Payment Status</th>
+                            <th width="" class="text-center text-nowrap" rowspan="2">Status</th>
+                        </tr>
+                        <tr>
+                            <th width="" class="text-center">Booked Date</th>
+                            <th width="" class="text-center">Test Date</th>
                         </tr>
                         </thead>
                         <tbody>
 
                         <tr>
                             <td>Goa Shipyard Ltd</td>
-                            <td>Goa Shipyard Ltd</td>
                             <td>Instrumentation Workshop</td>
                             <td>Goa</td>
                             <td>Electrical/ Electronics</td>
-                            <td>Current Injector (Primary)</td>
-                            <td>Delta Marketing</td>
-                            <td>0- 2000Amps</td>
-                            <td>Calibration & Testing ACBs, MCCBs for LT tripping</td>
-                            <td> ACBs, MCCBs for LT tripping </td>
-                            <td>All size of weld</td>
-                            <td>35 Kgs</td>
-                            <td>180 Minutes </td>
-                            <td>Rs 22680/</td>
+                            <td>Hardness test in HRA, HRB,HRC scales</td>
+                            <td>Hardness Testing of Ferous & Non ferous material</td>
+                            <td>Mark Miller</td>
+                            <td>20 / 20</td>
+                            <td>1000Amps</td>
+                            <td> 2019-10-11 </td>
+                            <td> 2019-10-15 </td>
+                            <td>Pending </td>
+                          
                             <td class="text-nowrap">
                                 <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning statusModelDetails" data-toggle="tooltip"
                                         data-original-title="{{--Edit--}}" >
@@ -137,70 +139,51 @@
 
                         <tr>
                             <td>Goa Shipyard Ltd</td>
-                            <td>Goa Shipyard Ltd</td>
                             <td>Instrumentation Workshop</td>
                             <td>Goa</td>
                             <td>Electrical/ Electronics</td>
-                            <td>Current Injector (Primary)</td>
-                            <td>Delta Marketing</td>
-                            <td>0- 2000Amps</td>
-                            <td>Calibration & Testing ACBs, MCCBs for LT tripping</td>
-                            <td> ACBs, MCCBs for LT tripping </td>
-                            <td>NA</td>
-                            <td>35 Kgs</td>
-                            <td>180 Minutes </td>
-                            <td>Rs 22680/</td>
+                            <td>Hardness test in HRA, HRB,HRC scales</td>
+                            <td>Hardness Testing of Ferous & Non ferous material</td>
+                            <td>Mark Miller</td>
+                            <td>MAX 700DIA</td>
+                            <td>200Amps</td>
+                            <td> 2019-10-11 </td>
+                            <td> 2019-10-15 </td>
+                            <td>Pending </td>
+                          
                             <td class="text-nowrap">
-                               <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning statusModelDetails" data-toggle="tooltip"
-                                        data-original-title="{{--Edit--}}">
+                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning statusModelDetails" data-toggle="tooltip"
+                                        data-original-title="{{--Edit--}}" >
                                     Rejected
                                 </button> 
+                               
                             </td>
                         </tr>
+
                         <tr>
-                            <td>Goa Shipyard Ltd</td>
                             <td>Goa Shipyard Ltd</td>
                             <td>Instrumentation Workshop</td>
                             <td>Goa</td>
                             <td>Electrical/ Electronics</td>
-                            <td>Current Injector (Primary)</td>
-                            <td>Delta Marketing</td>
-                            <td>0- 2000Amps</td>
-                            <td>Calibration & Testing ACBs, MCCBs for LT tripping</td>
-                            <td> ACBs, MCCBs for LT tripping </td>
-                            <td>Up o 500 mm Thickness</td>
-                            <td>35 Kgs</td>
-                            <td>180 Minutes </td>
-                            <td>Rs 22680/</td>
+                            <td>Hardness test in HRA, HRB,HRC scales</td>
+                            <td>Hardness Testing of Ferous & Non ferous material</td>
+                            <td>Mark Miller</td>
+                            <td>Not Applicable</td>
+                            <td>2000Amps</td>
+                            <td> 2019-10-11 </td>
+                            <td> 2019-10-15 </td>
+                            <td>Pending </td>
+                          
                             <td class="text-nowrap">
                                 <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning statusModelDetails" data-toggle="tooltip"
-                                        data-original-title="{{--Edit--}}">
-                                    Processing
+                                        data-original-title="{{--Edit--}}" >
+                                    Process
                                 </button> 
+                               
                             </td>
                         </tr>
-                        <tr>
-                            <td>Goa Shipyard Ltd</td>
-                            <td>Goa Shipyard Ltd</td>
-                            <td>Instrumentation Workshop</td>
-                            <td>Goa</td>
-                            <td>Electrical/ Electronics</td>
-                            <td>Current Injector (Primary)</td>
-                            <td>Delta Marketing</td>
-                            <td>0- 2000Amps</td>
-                            <td>Calibration & Testing ACBs, MCCBs for LT tripping</td>
-                            <td> ACBs, MCCBs for LT tripping </td>
-                            <td>Up o 500 mm Thickness</td>
-                            <td>35 Kgs</td>
-                            <td>180 Minutes </td>
-                            <td>Rs 22680/</td>
-                            <td class="text-nowrap">
-                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning statusModelDetails" data-toggle="tooltip"
-                                        data-original-title="{{--Edit--}}">
-                                    Completed
-                                </button> 
-                            </td>
-                        </tr>
+
+                        
                         </tbody>
                     </table>
                     {{-- $categories->links()  --}}

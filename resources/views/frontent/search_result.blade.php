@@ -1,10 +1,5 @@
 @extends('admin.layouts.admin')
-@section('page_style')
-<!-- Page -->
-<!-- <link rel="stylesheet" href="{{ asset('assets/assets/examples/css/tables/basic.min599c.css?v4.0.2') }}">
-    <link rel="stylesheet" href="{{ asset('assets/vendor/toastr/toastr.min599c.css?v4.0.2') }}">
-    <link rel="stylesheet" href="{{ asset('assets/assets/examples/css/advanced/toastr.min599c.css?v4.0.2') }}"> -->
-@endsection
+
 @section('header')
 <!-- <div class="page-header pb-0">
     <div class="panel">
@@ -45,17 +40,35 @@
                         <form>
                             <div class="row">
                                 <div class="col">
-                                    <input type="text" class="form-control" placeholder="Parameter/ Name of Test">
+                                    <select class="form-control" name="" id="">
+                                        <option>Please Select Discipline</option>
+                                        <option>Mechanical</option>
+                                        <option>Environmental</option>
+                                        <option>METALLOGRAPHY</option>
+                                    </select>
+                                    <!-- <input type="text" class="form-control" placeholder="Discipline"> -->
                                 </div>
                                 <div class="col">
-                                    <input type="text" class="form-control" placeholder="Eqpt/Product/ Material">
+                                    <!-- <input type="text" class="form-control" placeholder="Parameter/ Name of Test"> -->
+                                    <select class="form-control" name="" id="">
+                                        <option>Please Select Name of Test</option>
+                                        <option>Hardness test in HRA, HRB,HRC scales</option>
+                                        <option>Metallographic Analysis</option>
+                                        <option>Chemical Composition testing of elements</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <!-- <input type="text" class="form-control" placeholder="Eqpt/Product/ Material"> -->
+                                    <select class="form-control" name="" id="">
+                                        <option>Please Select Product/Material</option>
+                                        <option>Hardness Testing of Ferous & Non ferous material</option>
+                                        <option>To measure % of Carbon and Sulphur in Ferrous Metals</option>
+                                    </select>
                                 </div>
                                 <!-- <div class="col">
                                     <input type="text" class="form-control" placeholder="Location">
                                 </div> -->
-                                <div class="col">
-                                    <input type="text" class="form-control" placeholder="Discipline">
-                                </div>
+                                
                                  <div class="col">
                                     <button type="submit" class="btn btn-primary">Search</button>
                                 </div>
@@ -90,14 +103,19 @@
                     <table class="table table-bordered">
                         <thead>
                         <tr>
-                            <th width="15%">Parameter/ Name of Test</th>
-                            <th width="12%">Eqpt/Product/ Material</th>
-                            <th width="14%">Stds/ Specifications</th>
-                            <th width="14%">Discipline</th>
-                            <th width="14%">Location</th>
-                            <th width="14%">Range of Testing Eqpt</th>
-                            <th width="14%">Testing Charges/ Sample (excluding GST)</th>
-                            <th  width="15%" class="text-nowrap">Actions</th>
+                            <th>Parameter/ Name of Test</th>
+                            <th>Test/Calibration Facility (apparatus name)</th>
+                            <th>Test Eqpt Manufacturer</th>
+                            <th>Test Chamber Size</th>
+                            <th>Range of Testing Eqpt</th>
+                            <th>Max Dimension of Eqpt to be tested</th>
+                            <th>Max Weight of Eqpt to be tested</th>
+                            <th>Duration of Test</th>
+                            <th>Price</th>
+                            <th>NABL</th>
+                            <th>Advance Notice</th>
+                            <th>Location</th>
+                            <th class="text-nowrap">Actions</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -106,12 +124,17 @@
                         <tr>
                             <td class="record_id" style="display: none;">{{-- $category->id --}}</td>
                             <td class="record_name">AXIAL-HIGH CYCLE FATIGUE K1c & J1c Testing</td>
-                            <td class="">Metallic Materials</td>
-                            <td class=""> ASTM/IS/GOST/BS/AMS</td>
-                            <td>Electrical/ Electronics</td>
-                            <td class="">Goa</td>
-                            <td  > 0- 2000Amps </td>
-                            <td  > RT : Rs. 975/- HT:  Rs. 5700/- </td>
+                            <td class="">UTM-RKM-600 KN</td>
+                            <td class=""> Roell+Korthus, Germay</td>
+                            <td>850x1200x600 mm</td>
+                            <td class="">Capacity :0.0 - 600 KN</td>
+                            <td> 20 / 20 </td>
+                            <td>10 KG </td>
+                            <td> Upto 5 days </td>
+                            <td> RT : Rs. 975/- HT:  Rs. 5700/- </td>
+                            <td> NABL ACCREDITED </td>
+                            <td> NIL </td>
+                            <td> GOA </td>
                             <td class="text-nowrap">
                                <!--  <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning edit_record" data-toggle="tooltip"
                                         data-original-title="View Details">
@@ -128,14 +151,24 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Goa Shipyard Ltd</td>
-                            <td>Goa Shipyard Ltd</td>
-                            <td> Instrumentation Workshop</td>
-                            <td>Delta Marketing</td>
-                            <td> Goa</td>
-                            <td>PT 100/1000</td>
-                            <td>  Rs. 654/ </td>
+                            <td class="record_id" style="display: none;">{{-- $category->id --}}</td>
+                            <td class="record_name">AXIAL-HIGH CYCLE FATIGUE K1c & J1c Testing</td>
+                            <td class="">UTM-RKM-600 KN</td>
+                            <td class=""> Roell+Korthus, Germay</td>
+                            <td>850x1200x600 mm</td>
+                            <td class="">Capacity :0.0 - 600 KN</td>
+                            <td> 20 / 20 </td>
+                            <td>10 KG </td>
+                            <td> Upto 5 days </td>
+                            <td> RT : Rs. 975/- HT:  Rs. 5700/- </td>
+                            <td> NABL ACCREDITED </td>
+                            <td> NIL </td>
+                            <td> GOA </td>
                             <td class="text-nowrap">
+                               <!--  <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning edit_record" data-toggle="tooltip"
+                                        data-original-title="View Details">
+                                    <i class="icon wb-eye" aria-hidden="true"></i>
+                                </button> -->
                                 <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning edit_record" data-toggle="modal" data-target="#exampleModalCenter">
                                   <i class="icon wb-eye" aria-hidden="true"></i>
                                 </button>
@@ -143,18 +176,29 @@
                                         data-original-title="Book Order" href="{{ route('book-test')}}">
                                     <i class="icon wb-order" aria-hidden="true"></i>
                                 </a>
+                                
                             </td>
                         </tr>
 
                         <tr>
-                            <th width="">Midhani</th>
-                            <th width="">Midhani</th>
-                            <th width="">Midhani</th>
-                            <th width="">Test Eqpt manufacturer</th>
-                            <th width="">Heydrabad</th>
-                            <th width="">Metallic Materials</th>
-                            <th width="">Rs. 5292/-</th>
+                            <td class="record_id" style="display: none;">{{-- $category->id --}}</td>
+                            <td class="record_name">AXIAL-HIGH CYCLE FATIGUE K1c & J1c Testing</td>
+                            <td class="">UTM-RKM-600 KN</td>
+                            <td class=""> Roell+Korthus, Germay</td>
+                            <td>850x1200x600 mm</td>
+                            <td class="">Capacity :0.0 - 600 KN</td>
+                            <td> 20 / 20 </td>
+                            <td>10 KG </td>
+                            <td> Upto 5 days </td>
+                            <td> RT : Rs. 975/- HT:  Rs. 5700/- </td>
+                            <td> NABL ACCREDITED </td>
+                            <td> NIL </td>
+                            <td> GOA </td>
                             <td class="text-nowrap">
+                               <!--  <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning edit_record" data-toggle="tooltip"
+                                        data-original-title="View Details">
+                                    <i class="icon wb-eye" aria-hidden="true"></i>
+                                </button> -->
                                 <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning edit_record" data-toggle="modal" data-target="#exampleModalCenter">
                                   <i class="icon wb-eye" aria-hidden="true"></i>
                                 </button>
@@ -162,6 +206,7 @@
                                         data-original-title="Book Order" href="{{ route('book-test')}}">
                                     <i class="icon wb-order" aria-hidden="true"></i>
                                 </a>
+                                
                             </td>
                         </tr>
                         
@@ -232,7 +277,9 @@
             <!-- Modal footer -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-lg btn-danger" data-dismiss="modal">Close</button>
-                <!-- <button class="btn btn-lg btn-success save_btn" type="submit">Add<img width="20" height="20" id="onboard_preloader" style="display: none" src="{{ asset('assets/images/preloader.gif') }}"></button>  -->
+                <a class="btn btn-lg btn-primary" data-toggle="tooltip" data-original-title="Book Order" href="{{route('book-test')}}">
+                    Order
+                </a>
             </div>
         </div>
     </div>

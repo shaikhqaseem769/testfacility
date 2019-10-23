@@ -51,6 +51,7 @@
                             <th>Organisation Name</th>
                             <th>Email id of Establishment</th>
                             <th>Central Nodal Officer Email Id</th>
+                            <th>Central Nodal Officer Details</th>
                             <th>Status</th>
                             <th class="text-nowrap">Actions</th>
                         </tr>
@@ -67,6 +68,7 @@
                                 <td class="record_name">{{ isset($organisation->organisation_name) ? $organisation->organisation_name : ''}}</td>
                                 <td> {{ isset($organisation->establishment_email_id) ? $organisation->establishment_email_id : ''}} </td>
                                 <td> {{ isset($organisation->cno_email_id) ? $organisation->cno_email_id : ''}}</td>
+                                <td> {{ isset($organisation->details_of_cno) ? $organisation->details_of_cno : ''}}</td>
                                 <td class="text-center Recordstatus" status="{{ ($organisation->status==0) ? 1 : 0  }}">
                                     {{ ($organisation->status==0) ? 'Inactive' : 'Active' }}
                                 </td>

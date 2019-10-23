@@ -7,12 +7,11 @@
 
                     @if(Auth::user()->user_type === 'admin')
 
-                    <li class="">
+                    <!-- <li class="">
                         <a href="joid:javascript(0);">
-                            <!-- <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i> -->
                             <span class="site-menu-title">Admin</span>
                         </a>
-                    </li>
+                    </li> -->
 
                     <li class="site-menu-item {{ Route::is('book-test-list') ? 'active' : '' }}">
                         <a href="{{ route('book-test-list') }}">
@@ -23,7 +22,7 @@
 
                     
 
-                    <li class="site-menu-item has-sub {{ (
+                    <!-- <li class="site-menu-item has-sub {{ (
                         
                         Route::is('add-category') ||
                         Route::is('category-list') ||
@@ -56,12 +55,12 @@
                             </li>
                             
                         </ul>
-                    </li>
+                    </li> -->
 
                     <li class="site-menu-item {{ Route::is('organisation-list') || Route::is('add-organisation') ? 'active' : '' }}">
                         <a href="{{ route('organisation-list') }}">
                             <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
-                            <span class="site-menu-title">Organisation</span>
+                            <span class="site-menu-title">Organisation Master</span>
                         </a>
                     </li>
 
@@ -93,7 +92,7 @@
                         </ul>
                     </li>
 
-                    <li class="site-menu-item has-sub {{ (
+                    <!-- <li class="site-menu-item has-sub {{ (
                         
                        
                         Route::is('book-test-list') ||
@@ -123,17 +122,8 @@
                                     <span class="site-menu-title">Test  Rejected</span>
                                 </a>
                             </li>
-
-                            <!-- <li class="site-menu-item {{ ((Route::is('book-test-approve-reject') || Route::is('book-test-approve-reject') ) ? 'active' : '') }}">
-                                <a href="{{ route('book-test-approve-reject') }}">
-                                    <span class="site-menu-title">Accept, Rejected and Send back</span>
-                                </a>
-                            </li> -->
-
-
-
                         </ul>
-                    </li>
+                    </li> -->
 
                     <li class="site-menu-item {{ Route::is('reports') ? 'active' : '' }}">
                         <a href="{{ route('reports') }}">
@@ -144,9 +134,8 @@
 
                     <!-- Extra Code Start -->
                     <!-- For Central Nodal Officer -->
-                    <li class="">
+                    <!-- <li class="">
                         <a href="joid:javascript(0);">
-                            <!-- <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i> -->
                             <span class="site-menu-title">CNO / NO</span>
                         </a>
                     </li>
@@ -188,7 +177,7 @@
                             <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
                             <span class="site-menu-title">Reports</span>
                         </a>
-                    </li>
+                    </li> -->
 
 
 
@@ -198,9 +187,8 @@
 
                     <!-- For User -->
 
-                    <li class="">
+                    <!-- <li class="">
                         <a href="joid:javascript(0);">
-                            <!-- <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i> -->
                             <span class="site-menu-title">User</span>
                         </a>
                     </li>
@@ -237,7 +225,7 @@
                             <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
                             <span class="site-menu-title">Search Test</span>
                         </a>
-                    </li>
+                    </li> -->
 
                     <!-- Extra Code End -->
                     @endif
@@ -250,7 +238,9 @@
                         
                        
                         Route::is('book-test-list') ||
+                        Route::is('book-test-process-list') ||
                         Route::is('book-test-accepted-list') ||
+                        Route::is('book-test-approve-reject') ||
                         Route::is('book-test-rejected-list')
                         ) ? ' open active' : '' }}">
                         <a href="javascript:void(0)">
@@ -259,10 +249,15 @@
                             <span class="site-menu-arrow"></span>
                         </a>
                         <ul class="site-menu-sub">
-                            <li class="site-menu-item {{ Route::is('book-test-list') ||  Route::is('book-test-list') ? 'active' : '' }}">
+                            <li class="site-menu-item {{ Route::is('book-test-list') ||  Route::is('book-test-approve-reject') ? 'active' : '' }}">
                                 <a href="{{ route('book-test-list') }}">
-                                    <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
+                                    <!-- <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i> -->
                                     <span class="site-menu-title">Booking Test Request</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item {{ ((Route::is('book-test-process-list') || Route::is('book-test-process-list') ) ? 'active' : '') }}">
+                                <a href="{{ route('book-test-process-list') }}">
+                                    <span class="site-menu-title">Test  Process</span>
                                 </a>
                             </li>
                             <li class="site-menu-item {{ ((Route::is('book-test-accepted-list') || Route::is('book-test-accepted-list') ) ? 'active' : '') }}">
@@ -296,7 +291,9 @@
                         
                        
                         Route::is('book-test-list') ||
+                        Route::is('book-test-process-list') ||
                         Route::is('book-test-accepted-list') ||
+                        Route::is('book-test-approve-reject') ||
                         Route::is('book-test-rejected-list')
                         ) ? ' open active' : '' }}">
                         <a href="javascript:void(0)">
@@ -305,10 +302,15 @@
                             <span class="site-menu-arrow"></span>
                         </a>
                         <ul class="site-menu-sub">
-                            <li class="site-menu-item {{ Route::is('book-test-list') ||  Route::is('book-test-list') ? 'active' : '' }}">
+                            <li class="site-menu-item {{ Route::is('book-test-list') ||  Route::is('book-test-approve-reject') ? 'active' : '' }}">
                                 <a href="{{ route('book-test-list') }}">
-                                    <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
+                                    <!-- <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i> -->
                                     <span class="site-menu-title">Booking Test Request</span>
+                                </a>
+                            </li>
+                            <li class="site-menu-item {{ ((Route::is('book-test-process-list') || Route::is('book-test-process-list') ) ? 'active' : '') }}">
+                                <a href="{{ route('book-test-process-list') }}">
+                                    <span class="site-menu-title">Test  Process</span>
                                 </a>
                             </li>
                             <li class="site-menu-item {{ ((Route::is('book-test-accepted-list') || Route::is('book-test-accepted-list') ) ? 'active' : '') }}">
@@ -338,6 +340,13 @@
                     <!-- User -->
                     @if(Auth::user()->user_type === 'user')
 
+                     <li class="site-menu-item {{ Route::is('search') ? 'active' : '' }}">
+                        <a href="{{ route('search') }}">
+                            <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
+                            <span class="site-menu-title">Search Test</span>
+                        </a>
+                    </li>
+
                     <li class="site-menu-item has-sub {{ (
                         
                        
@@ -365,12 +374,7 @@
                         </ul>
                     </li>
 
-                    <li class="site-menu-item {{ Route::is('search') ? 'active' : '' }}">
-                        <a href="{{ route('search') }}">
-                            <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
-                            <span class="site-menu-title">Search Test</span>
-                        </a>
-                    </li>
+                   
 
                     @endif
 

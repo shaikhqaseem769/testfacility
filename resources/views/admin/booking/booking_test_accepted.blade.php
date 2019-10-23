@@ -61,16 +61,16 @@
                             <th width="" class="text-center" rowspan="2">Range of Testing Eqpt</th>
                             <th width="" class="text-center" rowspan="2">Eqpt/Product/ Material</th> -->
                             <th width="" class="text-center" rowspan="2">Parameter/ Name of Test</th>
+                            @if(Auth::user()->user_type !== 'user')
                             <th width="" class="text-center" rowspan="2">User Name</th>
+                            @endif
                             <th width="" class="text-center" colspan="2">Date</th>
                           
                             <th width="" class="text-center" rowspan="2">Status</th>
-                            @if(Auth::user()->user_type !== 'admin')
-                            <th width="" class="text-center" rowspan="2" class="text-nowrap">Actions</th>
-                            @endif
+                            
                         </tr>
                         <tr>
-                            <th width="" class="text-center">Booked Date</th>
+                            <th width="" class="text-center">Booking Date</th>
                             <th width="" class="text-center">Test Date</th>
                         </tr>
                         
@@ -83,24 +83,14 @@
                             <td> Instrumentation Workshop</td>
                             <td> Goa</td>
                             <td>Delta Marketing</td>
+                            @if(Auth::user()->user_type !== 'user')
                             <td>Richard</td>
+                            @endif
                             <td> 2019-10-11 </td>
                             <td> 2019-10-15 </td>
                             
-                            <td> Initiated </td>
-                            @if(Auth::user()->user_type !== 'admin')
-                            <td class="text-nowrap">
-                                <a class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="tooltip" data-original-title="Send Back Approved and Reject" href="{{ route('book-test-approve-reject') }}">
-                                    <i class="icon wb-eye" aria-hidden="true"></i>
-                                </a>
-                                <!-- <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="modal" data-target="#id">
-                                <i class="icon wb-trash" aria-hidden="true"></i>
-                                </button> 
-                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="tooltip" data-original-title="">
-                                    <i class="icon wb-close" aria-hidden="true"></i>
-                                </button> -->
-                            </td>
-                            @endif
+                            <td> Accepted </td>
+                            
                         </tr>
 
                         <tr>
@@ -109,23 +99,13 @@
                             <td width="">Midhani</td>
                             <td width="">Heydrabad</td>
                             <td width="">Test Eqpt manufacturer</td>
+                            @if(Auth::user()->user_type !== 'user')
                             <td width="">Mark Miller</td>
+                            @endif
                             <td> 2019-10-12 </td>
                             <td> 2019-10-20 </td>
-                            <td width="">Initiated</td>
-                            @if(Auth::user()->user_type !== 'admin')
-                            <td class="text-nowrap">
-                                <a class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="tooltip" data-original-title="Send Back Approved and Reject" href="{{ route('book-test-approve-reject') }}">
-                                    <i class="icon wb-eye" aria-hidden="true"></i>
-                                </a>
-                                <!-- <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="modal" data-target="#id">
-                                <i class="icon wb-trash" aria-hidden="true"></i>
-                                </button> 
-                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="tooltip" data-original-title="">
-                                    <i class="icon wb-close" aria-hidden="true"></i>
-                                </button> -->
-                            </td>
-                            @endif
+                            <td width="">Accepted</td>
+                            
                         </tr>
 
                         <tr>
@@ -134,24 +114,14 @@
                             <td> Instrumentation Workshop</td>
                             <td> Goa</td>
                             <td>Delta Marketing</td>
+                            @if(Auth::user()->user_type !== 'user')
                             <td>Shikhar Dhawan</td>
+                            @endif
                             <td> 2019-10-21 </td>
                             <td> 2019-10-25 </td>
                             
-                            <td> Initiated </td>
-                            @if(Auth::user()->user_type !== 'admin')
-                            <td class="text-nowrap">
-                                <a class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="tooltip" data-original-title="Send Back Approved and Reject" href="{{ route('book-test-approve-reject') }}">
-                                    <i class="icon wb-eye" aria-hidden="true"></i>
-                                </a>
-                                <!-- <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="modal" data-target="#id">
-                                <i class="icon wb-trash" aria-hidden="true"></i>
-                                </button>
-                                <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="tooltip" data-original-title="">
-                                    <i class="icon wb-close" aria-hidden="true"></i>
-                                </button> -->
-                            </td>
-                            @endif
+                            <td> Accepted </td>
+                            
                         </tr>
 
                         
