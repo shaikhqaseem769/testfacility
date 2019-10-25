@@ -39,7 +39,7 @@ function addUpdateRecord(url, formData, successMessage, reloadUrl, formId){
                 $('#'+index+'-block').html(value[0]);
             });
         }
-    });
+  });
 }
 
 

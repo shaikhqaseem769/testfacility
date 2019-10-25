@@ -77,6 +77,7 @@ Route::group(['middleware'=>'auth', 'namespace'=>'Admin'], function(){
 
     // Lab Details Add, Update, delete and change status
     Route::get('add-lab', 'LabDetailsController@addLabDetails')->name('add-lab');
+    Route::post('add-lab-validation', 'LabDetailsController@addLabDetailsValidation')->name('add-lab-validation');
     Route::get('lab-list', 'LabDetailsController@LabList')->name('lab-list');
 
 
@@ -115,6 +116,9 @@ Route::group(['middleware'=>'auth', 'namespace'=>'Admin'], function(){
         return view('admin.booking.book_test_process_list', compact('categories', 'page_title'));
     })->name('book-test-process-list');
 
+    Route::get('view-test-history', function() {
+        return view('admin.booking.view_test_history');
+    })->name('view-test-history');
 
     
 

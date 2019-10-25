@@ -1,5 +1,4 @@
 @extends('admin.layouts.admin')
-
 @section('header')
 <div class="page-header pb-0">
     <div class="panel">
@@ -58,7 +57,7 @@
                                     <select class="form-control"  id="organisation_name" name="organisation_name">
                                         <option selected disabled>Please Select Organization</option>
                                         @foreach($organisations as $organisation)
-                                            <option value="{{$organisation->id}}">{{$organisation->organisation_name}}</option>
+                                        <option value="{{$organisation->id}}">{{$organisation->organisation_name}}</option>
                                         @endforeach
                                     </select>
                                     <span class="help-block text-help text-danger" id="organisation_name-block"></span>
@@ -99,7 +98,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="col-md-4 float-right mb-1 p-0">
-                            <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#myModaladd">
+                            <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#addLabModalDetails1" onclick="checkOrganisationSelected();">
                             Add
                             </button>
                         </div>
@@ -130,7 +129,7 @@
                                         <td  > 97574645635 </td>
                                         <td  > 65466456 </td>
                                         <td class="text-nowrap">
-                                            <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning"  data-toggle="modal" data-target="#myModaladd">
+                                            <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning"  data-toggle="modal" data-target="#addLabModalDetails">
                                             <i class="icon wb-wrench" aria-hidden="true"></i>
                                             </button>
                                             <button type="button" class="btn btn-sm btn-icon btn-flat btn-warning" data-toggle="modal" data-target="#id">
@@ -148,8 +147,7 @@
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <!-- <button class="btn btn-lg btn-success save_btn" type="submit">Save as Draft<img width="20" height="20" id="onboard_preloader" style="display: none" src="{{ asset('assets/images/preloader.gif') }}"></button>  -->
-                         <button class="btn btn-lg btn-success save_btn" type="submit">Save<img width="20" height="20" id="onboard_preloader" style="display: none" src="{{ asset('assets/images/preloader.gif') }}"></button>
-                           
+                        <button class="btn btn-lg btn-success save_btn" type="submit">Save<img width="20" height="20" id="onboard_preloader" style="display: none" src="{{ asset('assets/images/preloader.gif') }}"></button>
                     </div>
                 </div>
             </form>
@@ -157,16 +155,13 @@
         </div>
     </div>
 </div>
-
-
-
 <!-- custom modal for add start -->
-<div class="modal" id="myModaladd">
+<div class="modal" id="addLabModalDetails">
     <div class="modal-dialog modal-xl modal-lg">
         <div class="modal-content">
             <!-- Modal Header -->
             <form action="" id="addLabsDetails" method="POST" enctype="multipart/form-data">
-                 {{ csrf_field() }}
+                {{ csrf_field() }}
                 <div class="modal-header">
                     <h4 class="modal-title">Lab Details</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -183,7 +178,6 @@
                             </div>
                         </div>
                     </div>
-                    
                     <div class="row">
                         <div class="col-md-6 col-lg-6" >
                             <div class="example-wrap mb-35">
@@ -201,7 +195,6 @@
                                         <span class="help-block text-help text-danger" id="address-block"></span>
                                     </div>
                                 </div>
-                                
                                 <div class="form-group row">
                                     <label for="details_of_no" class="col-md-4"><span class="text-danger">*</span>Details of Nodal Officer:</label>
                                     <div class="col-md-8">
@@ -244,7 +237,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <!-- Modal footer -->
                 <div class="modal-footer">
@@ -256,45 +248,82 @@
     </div>
 </div>
 <!-- custom modal for add end -->
-
 @endsection
 @section('custom_scripts')
 <script type="text/javascript">
-   
     $('form#addLabsDetails').on('submit', function (ev) {
         ev.preventDefault();
-
+    
         let formData = new FormData($(this)[0]);
         let recodIdExist = $('#organisation_id').val(); 
-
+    
         let successMessage = "Added!";
         if(recodIdExist){
             successMessage = "Updated!";
         }
-
-        let url = APP_BASE_URL.concat('/organisation');
-        let formId = 'form_organisation';
-        let reloadUrl = APP_BASE_URL.concat('/organisation-list');
-
+    
+        let url = APP_BASE_URL.concat('/add-lab-validation');
+        let formId = 'addLabsDetails';
+        let reloadUrl = APP_BASE_URL.concat('/lab-list');
+    
+    
+        $.ajax({
+            url:url,
+            method:'POST',
+            data:formData,
+            cache:false,
+            contentType:false,
+            processData:false,
+            beforeSend:function () {
+                $('.help-block').html('');
+                $('#menu_category_preloader').show();
+                $('.save_btn').prop('disabled',true);
+            },
+            success:function(response){
+                $('#menu_category_preloader').hide();
+                $('.save_btn').prop('disabled',false);
+                
+                $('form#' + formId)[0].reset();
+                $('#addLabModalDetails').modal('hide');
+                    
+                
+            },
+            error:function(response){
+                $('#menu_category_preloader').hide();
+                $('.save_btn').prop('disabled',false);
+                $.each(response.responseJSON.errors,function(index,value){
+                    $('#'+index+'-block').html(value[0]);
+                });
+            }
+      });
+    
+    
         // window.location.href = reloadUrl;
-
+    
         /*formData.append('user_id',"{{ (Auth::check()) ? Auth::user()->id : '' }}");*/
-
-        addUpdateRecord(url, formData, successMessage, reloadUrl, formId);
+    
+        // addUpdateRecord(url, formData, successMessage, reloadUrl, formId);
     })
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
+    
+    function checkOrganisationSelected(){
+        let organisation_name = $('#organisation_name').val();
+        if(organisation_name){
+            $('#addLabModalDetails').modal('show');
+        }else{
+            swal("Cancelled", "Please First select organisation name!", "error");
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     function organisationDetails(organisationId) {
         $.ajax({
            url:APP_BASE_URL.concat('/organisation-data/'+organisationId),
@@ -315,7 +344,7 @@
         let organisationId = $(this).val();
         organisationDetails(organisationId);
     });
-
+    
     // organisationDetails();
     
     $('form#addLabs').submit(function(ev){
